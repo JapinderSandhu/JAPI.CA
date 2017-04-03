@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JAPI</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- this is useful to make HTML5 tags work in older browsers -->
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+     <div id="japi">
+       <img src="/media/japi.png" alt="logo">
+     </div>
+<form method="get" action="file.doc">
+
+
+<button id="button"><img src="/media/word.png" alt="">Portfolio</button>
+</form>
+<script type="text/javascript">
+
+
+$(function(){
+  $("#nav a").click(function(e){
+    e.preventDefault();
+    $('html,body').scrollTo(this.hash,this.hash);
+  });
+});
+</script>
+
+
+
+    </body>
+</html>
