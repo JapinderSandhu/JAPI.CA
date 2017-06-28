@@ -1,0 +1,167 @@
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*-------------------Nav----------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+#nav{
+  overflow:auto;
+  position: relative;
+  text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.list li {
+  display: inline-block;
+}
+.list a:hover {
+  color:pink;
+}
+.list a:visited {
+  color:Black;
+}
+.list a:active {
+  color:red;
+}
+.list a:link {
+  color:Black;
+}
+
+.liElement{
+  letter-spacing: 2px;
+  padding: 4%;
+}
+
+
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*----------------Content---------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+
+
+body{
+  background:  url(../assets/media/1920x1080/Websitehome.png);
+  background-position: center no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+#content{
+  overflow-x: hidden;
+  overflow:auto;
+  display: block;
+  position: relative;
+  padding: 20px 20px 20px 20px;
+  height: 80%;
+  margin-top: 8%;
+}
+
+#japi{
+  position: relative;
+  display: block;
+  overflow:auto;
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
+
+
+#w {
+  position: relative;
+  background:  url(../assets/media/1920x1080/scroll.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size:118%;
+  margin-left: 25%;
+  margin-right: 19.55%;
+  height: 100%;
+  margin-bottom: 50%;
+}
+
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*----------------LIVE------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+
+
+
+
+
+#Live{
+  overflow:auto;
+  margin-bottom: 40%;
+}
+#may13_2017_video{
+  overflow:auto;
+  position: relative;
+  margin-left: 25%;
+  margin-right: 19.55%;
+  max-width: 100%;
+  height: 50%;
+  width: 50%;
+  padding-bottom: 30px;
+}
+
+#day-may13_2017_title{
+  overflow:auto;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  max-width: 100%;
+  height: auto;
+}
+
+#may13_2017_post_1{
+  padding-bottom: 30px;
+  overflow:auto;
+  position: relative;
+  margin-left: 25%;
+  margin-right: 19.55%;
+  height: 50%;
+  width: 50%;
+}
+
+#Music{
+
+}
+
+
+
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*----------------Borders---------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------
+
+
+
+#Live{border: 3px solid pink;}
+
+#w{border: 3px solid green;}
+
+#japi{border: 3px solid yellow;}
+
+#content{border: 3px solid red;}
+
+#nav_container{border: 3px solid brown;}
+
+a {border: 3px solid brown;}
+
+.list li {border: 3px solid brown;}
+*/
