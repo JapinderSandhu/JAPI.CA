@@ -1,10 +1,10 @@
 README
 VERSION 1.0.0
 
-AS OF JUNE 1, 2017
+DRAFT 7 AS OF JUNE 13, 2017
 
-LOG 
-
+LOG
+    ///////////////////////////////////////////////////////////
     Friday, April 14, 2017
 
       Current:
@@ -14,7 +14,64 @@ LOG
       Next:
         -link css to index
         -follow basic steps
-
+    ///////////////////////////////////////////////////////////
     Sunday, May 7, 2017
 
-    *Correct the scroll image,breaks on scroll
+      *Correct the scroll image, make it not break
+
+
+
+    ///////////////////////////////////////////////////////////
+    Tuesday, June 6, 2017
+
+      Restart, implement bootstrap & wordpress loop for posts
+
+        Goals:
+          - Wp Loop
+            Categories for Wordpress Posts
+            Template for Post
+            Word pagination
+            infinite scroll
+            focus on backend
+
+
+
+
+    ///////////////////////////////////////////////////////////
+    Tuesday, June 7, 2017
+
+      Current:
+        - Reverse Order of posts,
+            scroll up rather than scroll down to see latest posts
+            latest to oldest - bottom to top
+
+
+        -
+
+    ///////////////////////////////////////////////////////////
+    Sunday, June 11, 2017
+
+      FIZA MEETING:
+        Development:
+          -Decided to make last page come first on scroll for posts
+
+
+          HOW TO IMPLEMENT INFINITE SCROLL ON A BLOG PAGE, WORD PRESS BASED
+
+          BASED OFF PAGES
+          5 POSTS PER PAGE
+
+    ///////////////////////////////////////////////////////////
+    Sunday, June 13, 2017
+
+      Load-more works, page 1 displays oldest posts, I need it to display most recent posts
+
+      Goals:
+        -Implement bootstrap
+        -Load page button replace with scroll hitting the top of the page
+        -Implement smooth scroll on new page load
+
+    ///////////////////////////////////////////////////////////
+    Friday, June 23, 2017
+
+      Decided to scrap post loop, now using Archive to show all posts

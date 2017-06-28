@@ -6,10 +6,16 @@
 /*--------------------------------------*/
 /*--------------------------------------*/
 
-#nav{
+
+#nav_container{
+  top: 0;
+  z-index: 100;
   overflow:auto;
-  position: relative;
+  position: fixed;
   text-align: center;
+  display: inline-block;
+  width: 100%;
+  background: white;
 }
 
 a {
@@ -34,7 +40,8 @@ a {
 
 .liElement{
   letter-spacing: 2px;
-  padding: 4%;
+  padding-left:4%;
+
 }
 
 
@@ -96,33 +103,40 @@ body{
 /*--------------------------------------*/
 /*--------------------------------------*/
 
+#Post_title{
+  position: relative;
+  display: block;
+  overflow:auto;
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
 
 
-
-
+.Post-button{
+  margin-left: 40%;
+}
+.Post-container{
+  margin: 0 auto;
+  overflow:auto;
+  position: relative;
+  height: 50%;
+  padding-bottom: 30px;
+}
 
 #Live{
   overflow:auto;
   margin-bottom: 40%;
 }
-#may13_2017_video{
-  overflow:auto;
+.Vlog{
   position: relative;
-  margin-left: 25%;
-  margin-right: 19.55%;
-  max-width: 100%;
-  height: 50%;
-  width: 50%;
-  padding-bottom: 30px;
-}
-
-#day-may13_2017_title{
-  overflow:auto;
-  position: relative;
-  margin-left: 20%;
-  margin-right: 20%;
-  max-width: 100%;
-  height: auto;
+  overflow:hidden;
+  height: 0;
+  margin-left: 16%;
+  margin-bottom: 10%;
+  padding-top: 35px;
+  padding-bottom: 56.25%;
 }
 
 #may13_2017_post_1{
@@ -139,6 +153,12 @@ body{
 
 }
 
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*----------------AJAX------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
 
 
 
@@ -147,7 +167,8 @@ body{
 /*----------------Borders---------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
-/*--------------------------------------
+/*--------------------------------------*/
+
 
 
 
@@ -161,7 +182,14 @@ body{
 
 #nav_container{border: 3px solid brown;}
 
-a {border: 3px solid brown;}
+a {border: 3px solid orange;}
 
 .list li {border: 3px solid brown;}
-*/
+
+.Post-container{border: 3px solid red;}
+
+.timeline{border: 3px solid green;}
+
+.Vlog{border: 3px solid green;}
+
+.Post_title{border: 3px solid green;}
