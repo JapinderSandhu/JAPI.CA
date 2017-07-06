@@ -10,11 +10,22 @@ Template Name: Front Page
 
       <div id="Live" class="section">
 
-        <div class="Post-container"></div>
-
         <div class="timeline">
           <?php wp_get_archives(['type'=>'daily', 'format'=>'with_plus','order'=> 'ASC']); ?>
         </div>
+
+        <div class="previous Onclick" type="button">
+          <img id="previous"src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/next.png" >
+        </div>
+
+        <div class="next Onclick" type="button">
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/previous.png">
+        </div>
+
+
+        <div class="Post-container"></div>
+
+        <div class="selected_date"></div>
 
       </div><!-- @end #Live -->
 

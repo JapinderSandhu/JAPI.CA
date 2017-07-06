@@ -89,8 +89,8 @@ body{
   background-repeat: no-repeat;
   background-position: top;
   background-size:118%;
-  margin-left: 25%;
-  margin-right: 19.55%;
+margin-right: 17%;
+margin-left: 21%;
   height: 100%;
   margin-bottom: 50%;
 }
@@ -103,14 +103,56 @@ body{
 /*--------------------------------------*/
 /*--------------------------------------*/
 
+.timeline{
+position: absolute;
+font-size: x-small;
+width: 85px;
+z-index: 10;
+}
+
+
+
+.noclick{
+  opacity: 0.5;
+  cursor: not-allowed;
+  /*border: 3px solid pink;*/
+  pointer-events:none
+
+}
+
+.Onclick{
+/*border: 3px solid orange;*/
+cursor: pointer;
+}
+.Onclick:hover{
+  opacity: 1;
+}
+
+.previous{
+position: absolute;
+z-index: 12;
+margin-top: 55%;
+margin-left: 75%;
+opacity: 0.5;
+}
+
+.next{
+
+/*border: 3px solid orange;*/
+position: absolute;
+z-index: 10;
+margin-top: 60%;
+margin-left: 79%;
+opacity: 0.5;
+}
+
+
 #Post_title{
   position: relative;
   display: block;
   overflow:auto;
-  height: 50%;
-  width: 50%;
-  margin-left: 25%;
-  margin-bottom: 10%;
+  margin-left: 28.5%;
+  font-size: 18px;
 }
 
 
@@ -118,26 +160,52 @@ body{
   margin-left: 40%;
 }
 .Post-container{
-  margin: 0 auto;
   overflow:auto;
   position: relative;
-  height: 50%;
-  padding-bottom: 30px;
+  height: 650px;
+
 }
 
 #Live{
   overflow:auto;
   margin-bottom: 40%;
 }
+
 .Vlog{
   position: relative;
   overflow:hidden;
-  height: 0;
-  margin-left: 16%;
-  margin-bottom: 10%;
-  padding-top: 35px;
-  padding-bottom: 56.25%;
+  margin-left: 25%;
+  margin-right: 20%;
 }
+.Text{
+  position: relative;
+  overflow:hidden;
+  margin-left: 16%;
+  margin-right: 20%;
+}
+
+.Music{
+  position: relative;
+  overflow:hidden;
+  margin-left: 33%;
+}
+
+.Photo{
+  position: relative;
+  overflow:hidden;
+  margin-left: 33%;
+}
+
+
+
+.selected_date{
+  position: relative;
+  overflow:hidden;
+  margin-left: 42%;
+  color: white;
+}
+
+
 
 #may13_2017_post_1{
   padding-bottom: 30px;
@@ -149,9 +217,6 @@ body{
   width: 50%;
 }
 
-#Music{
-
-}
 
 /*--------------------------------------*/
 /*--------------------------------------*/
@@ -167,7 +232,8 @@ body{
 /*----------------Borders---------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
-/*--------------------------------------*/
+/*--------------------------------------
+
 
 
 
@@ -193,3 +259,4 @@ a {border: 3px solid orange;}
 .Vlog{border: 3px solid green;}
 
 .Post_title{border: 3px solid green;}
+*/

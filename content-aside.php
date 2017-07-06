@@ -1,0 +1,15 @@
+<?php
+          $currentissue->posts;
+          $currentissue->posts[0]->ID;
+          $id = $currentissuce->posts[0]->ID;
+          $category = get_the_category( $id );
+
+ ?>
+
+<h3 id="Post_title"><?php the_title(); ?></h3>
+
+<div class="<?php echo $category[0]->cat_name; ?>">
+  <div class="embed-responsive embed-responsive-16by9">
+    <p id="Post_content"><?php the_content(); ?></p>
+  </div>
+</div>
