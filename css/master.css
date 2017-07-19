@@ -103,13 +103,114 @@ margin-left: 21%;
 /*--------------------------------------*/
 /*--------------------------------------*/
 
-.timeline{
-position: absolute;
-font-size: x-small;
-width: 85px;
-z-index: 10;
+
+
+#Post_title{
+  position: relative;
+  display: block;
+  overflow:auto;
+  margin-left: 28.5%;
+  font-size: 18px;
 }
 
+
+.Post-button{
+  margin-left: 40%;
+}
+.Post-container{
+  overflow:auto;
+  position: relative;
+  min-height: 590px;
+  max-height: 650px;
+
+}
+
+#Live{
+  overflow:auto;
+  margin-bottom: 40%;
+}
+
+.Vlog{
+  position: relative;
+  overflow:hidden;
+  margin-left: 25%;
+  margin-right: 20%;
+}
+.Text{
+  position: relative;
+  overflow:hidden;
+  margin-left: 16%;
+  margin-right: 20%;
+}
+
+.Music{
+  position: relative;
+  overflow:hidden;
+  margin-left: 33%;
+}
+
+.Photo{
+  position: relative;
+  overflow:hidden;
+  margin-left: 33%;
+}
+
+#may13_2017_post_1{
+  padding-bottom: 30px;
+  overflow:auto;
+  position: relative;
+  margin-left: 25%;
+  margin-right: 19.55%;
+  height: 50%;
+  width: 50%;
+}
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*---------------Timeline---------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+.archive-years{
+  position: relative;
+  margin-right: 40px;
+}
+.archive-months-container{
+  position: relative;
+  margin-right: 40px;
+}
+.archive-days-container{
+  position: relative;
+  margin-right: 40px;
+}
+
+.day_box{
+  vertical-align: middle;
+  display: inline-block;
+  height:3px;
+  width: 14px;
+  background-color: grey;
+}
+
+.selected_box{
+  vertical-align: middle;
+  display: inline-block;
+  height:3px;
+  width: 30px;
+  background-color: pink;
+
+}
+
+
+.timeline{
+
+
+position: absolute;
+font-size: x-small;
+width: 250px;
+z-index: 10;
+}
 
 
 .noclick{
@@ -146,86 +247,17 @@ margin-left: 79%;
 opacity: 0.5;
 }
 
-
-#Post_title{
-  position: relative;
-  display: block;
-  overflow:auto;
-  margin-left: 28.5%;
-  font-size: 18px;
-}
-
-
-.Post-button{
-  margin-left: 40%;
-}
-.Post-container{
-  overflow:auto;
-  position: relative;
-  height: 650px;
-
-}
-
-#Live{
-  overflow:auto;
-  margin-bottom: 40%;
-}
-
-.Vlog{
-  position: relative;
-  overflow:hidden;
-  margin-left: 25%;
-  margin-right: 20%;
-}
-.Text{
-  position: relative;
-  overflow:hidden;
-  margin-left: 16%;
-  margin-right: 20%;
-}
-
-.Music{
-  position: relative;
-  overflow:hidden;
-  margin-left: 33%;
-}
-
-.Photo{
-  position: relative;
-  overflow:hidden;
-  margin-left: 33%;
-}
-
-
-
 .selected_date{
+  background:  url(../assets/media/1920x1080/timeline.png);
+  background-repeat: no-repeat;
+  background-size:111%;
   position: relative;
   overflow:hidden;
-  margin-left: 42%;
   color: white;
+  height: 50px;
+  text-align: center;
+
 }
-
-
-
-#may13_2017_post_1{
-  padding-bottom: 30px;
-  overflow:auto;
-  position: relative;
-  margin-left: 25%;
-  margin-right: 19.55%;
-  height: 50%;
-  width: 50%;
-}
-
-
-/*--------------------------------------*/
-/*--------------------------------------*/
-/*----------------AJAX------------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
-
-
 
 /*--------------------------------------*/
 /*--------------------------------------*/
@@ -233,6 +265,7 @@ opacity: 0.5;
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------------------------------------
+
 
 
 
@@ -248,8 +281,6 @@ opacity: 0.5;
 
 #nav_container{border: 3px solid brown;}
 
-a {border: 3px solid orange;}
-
 .list li {border: 3px solid brown;}
 
 .Post-container{border: 3px solid red;}
@@ -259,4 +290,5 @@ a {border: 3px solid orange;}
 .Vlog{border: 3px solid green;}
 
 .Post_title{border: 3px solid green;}
+
 */

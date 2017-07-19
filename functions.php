@@ -21,15 +21,15 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 
 add_action('wp_enqueue_scripts', 'japi_include_enqueue');
 
-
+//$ajax_url_data= admin_url('admin-ajax.php');
 require get_template_directory() . '/ajax.php';
 
 add_filter ('get_archives_link',
 function ($link_html, $url, $text, $format, $before, $after) {
     if ('with_plus' == $format) {
-        $link_html = "<p data-url='http://localhost:8888/wordpress/wp-admin/admin-ajax.php'> <a class = 'day' data-url='http://localhost:8888/wordpress/wp-admin/admin-ajax.php'>"
-                   . "$text"
-                   ."</a> </p>";
+      $link_html = "<p> <a>"
+                 . "$text"
+                 ."</a> </p>";
     }
     return $link_html;
 }, 10, 6);

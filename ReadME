@@ -75,15 +75,29 @@ LOG
     Friday, June 23, 2017
 
       Decided to scrap post loop, now using Archive to show all posts
-      
+
     ///////////////////////////////////////////////////////////
     Thursday, July 6, 2017
 
       Successfully implemented archive timeline functionality.
-      
+
       -Next steps:
             -create filters for Categories, such as Photos, Music, Vlogs
             -make css more responsive for different ammounts of posts per page
-            
-      
 
+    ///////////////////////////////////////////////////////////
+    Tuesday, July 18, 2017
+
+      Completed:
+        -Largely improved timeline functionality
+
+      Next Steps:
+        -create better filters for Categories, such as Photos, Music, Vlogs
+        -make css more responsive for different ammounts of posts per page, still need to figure this out
+        -figure out a better video manager, Vimeo is trash
+        -Need to figure out how to create the li ul elements dropdown/hide
+        -Spacing for timeline and content needs to be adjusted when resizing the Page
+
+        -Need to start creating the "Works" page, this will include my portfolio
+
+        
