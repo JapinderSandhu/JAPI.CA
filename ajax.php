@@ -11,11 +11,12 @@ function japi_load_more(){
   $day = htmlspecialchars(trim($_POST['digwp_d']));
 
 
-  $querystring = "year=$year&monthnum=$month&day=$day&posts_per_page=-1";
-  query_posts($querystring);
+
+  query_posts(array( 'date_query' => array(array('year' => $year, 'month' => $month,'day' => $day,)),'posts_per_page'=>-1 ));
+
 
 	        if (have_posts()) : while (have_posts()) : the_post();
-          ;
+
           ?>
 
             <?php get_template_part('content',get_post_format()); ?>

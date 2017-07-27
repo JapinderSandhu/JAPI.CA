@@ -65,7 +65,6 @@ body{
 #content{
   overflow-x: hidden;
   overflow:auto;
-  display: block;
   position: relative;
   padding: 20px 20px 20px 20px;
   height: 80%;
@@ -86,9 +85,9 @@ body{
 #w {
   position: relative;
   background:  url(../assets/media/1920x1080/scroll.png);
+  background-position-y: -270px;
   background-repeat: no-repeat;
-  background-position: top;
-  background-size:118%;
+  background-size:100%;
 margin-right: 17%;
 margin-left: 21%;
   height: 100%;
@@ -103,13 +102,42 @@ margin-left: 21%;
 /*--------------------------------------*/
 /*--------------------------------------*/
 
+.left-control{
+  max-width: 100%;
+  max-height: 100%;
+}
+.right-control{
+max-width: 100%;
+max-height: 100%;
+}
 
+.carousel-inner{
+ vertical-align:middle;
+}
+
+.carousel-control {
+background: none;
+position: absolute;
+top: 50%; /* pushes the icon in the middle of the height */
+z-index: 5;
+display: inline-block;
+}
+.Gallery{
+  /*border: 3px solid yellow;*/
+  overflow: hidden;
+  margin:0 auto;
+  margin-top: 10px;
+  max-width: 230px;
+  max-height: 300px;
+  margin-bottom: 5px;
+
+}
 
 #Post_title{
+  width: 100%;
+  text-align:center;
   position: relative;
-  display: block;
   overflow:auto;
-  margin-left: 28.5%;
   font-size: 18px;
 }
 
@@ -118,23 +146,31 @@ margin-left: 21%;
   margin-left: 40%;
 }
 .Post-container{
+  padding-bottom: 5px;
+  margin: 0 auto;
   overflow:auto;
   position: relative;
   min-height: 590px;
-  max-height: 650px;
+  max-height: 755px;
 
 }
 
 #Live{
   overflow:auto;
   margin-bottom: 40%;
+  overflow-x: hidden;
 }
-
+.Vlog_Large{
+  position: relative;
+  overflow:hidden;
+  margin: 0 auto;
+  max-width: 60%;
+}
 .Vlog{
   position: relative;
   overflow:hidden;
-  margin-left: 25%;
-  margin-right: 20%;
+  margin: 0 auto;
+  max-width: 40%;
 }
 .Text{
   position: relative;
@@ -147,6 +183,8 @@ margin-left: 21%;
   position: relative;
   overflow:hidden;
   margin-left: 33%;
+  margin: 0 auto;
+  max-width: 30%;
 }
 
 .Photo{
@@ -171,6 +209,10 @@ margin-left: 21%;
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
+
+.hidden{
+display: none;
+}
 
 .archive-years{
   position: relative;
@@ -198,14 +240,11 @@ margin-left: 21%;
   display: inline-block;
   height:3px;
   width: 30px;
-  background-color: pink;
-
+  background-color: #8E5B70;
 }
 
 
 .timeline{
-
-
 position: absolute;
 font-size: x-small;
 width: 250px;
@@ -247,17 +286,34 @@ margin-left: 79%;
 opacity: 0.5;
 }
 
-.selected_date{
+.selected_date_wrapper{
   background:  url(../assets/media/1920x1080/timeline.png);
   background-repeat: no-repeat;
-  background-size:111%;
+  background-size:100%;
+}
+.selected_date{
+  font-weight: bold;
   position: relative;
   overflow:hidden;
   color: white;
-  height: 50px;
+  vertical-align: middle;
+  height: 40px;
+  font-size: 20px;
   text-align: center;
 
+
+  transform: perspective(50em) rotateX(50deg);
+
 }
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------MEDIA QUERIES KEYFRAME--------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+
+
 
 /*--------------------------------------*/
 /*--------------------------------------*/
@@ -288,6 +344,9 @@ opacity: 0.5;
 .timeline{border: 3px solid green;}
 
 .Vlog{border: 3px solid green;}
+.still{border: 3px solid yellow;}
+.Music{border: 3px solid red;}
+
 
 .Post_title{border: 3px solid green;}
 

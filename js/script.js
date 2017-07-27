@@ -1,5 +1,40 @@
+//Global variable of all dates-children in a single Array
+var dateListFull = $('#dom-target').children();
+
 //Global variable of all dates in a single Array
 var Dates = $('#dom-target');
+
+$(document).ready(function(){
+  //scroll to specific home page point
+ $("html, body").animate({ scrollTop: 1012 }, 1000);
+
+ function hover_slide(){
+    var id_mouseout;
+    //This will drop down the list of dates on mouseover
+    $('.archive-months').mouseover(function() {
+    //  console.log("id: "+this.id);
+     $('#'+this.id+"-monthList").slideDown("slow");
+     id_mouseout = '#'+this.id+"-monthList"
+    // console.log("slidedown mouseover: "+ id_mouseout);
+
+
+
+    });
+    //This will slide Up the list of dates on mouseover
+    $(".timeline").mouseleave(function(){
+
+
+     for(i=0;i<=dateListFull.length;i++){
+       var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+       if(!($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+         $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+         //console.log("slideup mouseout: "+ $('#'+this.id+"-monthList").text());
+       }
+     }
+   });
+ }
+ hover_slide()
+});
 
 /*--------------------------------------*/
 /*--------------------------------------*/
@@ -8,6 +43,9 @@ var Dates = $('#dom-target');
 /*--------------------------------------*/
 /*--------------------------------------*/
 $(document).ready(function(){
+
+
+
   $('.next').removeClass('Onclick');
   $('.next').addClass('noclick');
     console.log("ONLOAD");
@@ -35,18 +73,40 @@ $(document).ready(function(){
 
 
 
+
       $('#' +split[1]+split[2]+split[3]).removeClass("day_box");
       $('#' +split[1]+split[2]+split[3]).addClass("selected_box");
 
   //    console.log("DATE: "+dateArray.trim());
+  var dateListFull = $('#dom-target').children();
 
+  for(i=0;i<=dateListFull.length;i++){
+    var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+
+
+    if($('#' +other_split[1]+other_split[2]+other_split[3]).hasClass("selected_box")){
+
+      $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+      //      console.log("this is the parent Onload");
+    }
+    else {
+      $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+    }
+
+  }
+  function convertMonthNameToNumber(monthName) {
+      var myDate = new Date(monthName + " 1, 2000");
+      var monthDigit = myDate.getMonth();
+      return isNaN(monthDigit) ? 0 : (monthDigit + 1);
+  }
+  var m_number = convertMonthNameToNumber(m);
       $.ajax({
 
         url : ajaxurl,
         type: 'post',
         data :{
           "digwp_y": y,
-          "digwp_m" : m,
+          "digwp_m" : m_number,
           "digwp_d" : d,
         action: 'japi_load_more'
         },
@@ -145,14 +205,19 @@ $(document).on('click','.next', function(){
         //  console.log("Length of List of dates: "+ dateListFull.length);
 
     //  that.addclass(.japi_load_more)
-
+    function convertMonthNameToNumber(monthName) {
+        var myDate = new Date(monthName + " 1, 2000");
+        var monthDigit = myDate.getMonth();
+        return isNaN(monthDigit) ? 0 : (monthDigit + 1);
+    }
+    var m_number = convertMonthNameToNumber(m);
       $.ajax({
 
         url : ajaxurl,
         type: 'post',
         data :{
           "digwp_y": y,
-  				"digwp_m" : m,
+  				"digwp_m" : m_number,
 				  "digwp_d" : d,
         action: 'japi_load_more'
         },
@@ -168,6 +233,23 @@ $(document).on('click','.next', function(){
         }
 
     });
+    var dateListFull = $('#dom-target').children();
+
+    for(i=0;i<=dateListFull.length;i++){
+      var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+      if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+
+           $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+  //         console.log("this is the parent previous");
+
+  //           console.log("children"+($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().text()));
+
+      }
+      else{
+        $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+      }
+    }
+
 });
 
 
@@ -186,10 +268,10 @@ $(document).on('click','.previous', function(){
 
 
     var Current_date=$('.selected_date').text();
-//    console.log("Current Date:"+Current_date);
+    //    console.log("Current Date:"+Current_date);
 
     var Current_object=$('p:contains(' + Current_date + ')').get(0);
-//    console.log("Current Object:"+Current_object);
+    //    console.log("Current Object:"+Current_object);
     var Current_object_text = $(Current_object).text();
   //  console.log("Current Object Inner Text:"+Current_object_text);
 
@@ -202,7 +284,7 @@ $(document).on('click','.previous', function(){
 
       var First = $("#dom-target").children().first();
       var inner = First.text();
-      console.log("First Object:"+inner);
+      //      console.log("First Object:"+inner);
       if(Previous_object_text===inner){
         $('.previous').removeClass('Onclick');
         $('.previous').addClass('noclick');
@@ -231,9 +313,9 @@ $(document).on('click','.previous', function(){
     var m = split[1];
     var d = split[2];
 
-//    console.log("year: "+y);
-//      console.log("month: "+m);
-//      console.log("day: " +d);
+    //    console.log("year: "+y);
+    //      console.log("month: "+m);
+    //      console.log("day: " +d);
 
       $('.selected_date').empty();
       $('.selected_date').append(dateArray);
@@ -256,14 +338,19 @@ $(document).on('click','.previous', function(){
         //    console.log("Length of List of dates: "+ dateListFull.length);
 
     //  that.addclass(.japi_load_more)
-
+    function convertMonthNameToNumber(monthName) {
+        var myDate = new Date(monthName + " 1, 2000");
+        var monthDigit = myDate.getMonth();
+        return isNaN(monthDigit) ? 0 : (monthDigit + 1);
+    }
+    var m_number = convertMonthNameToNumber(m);
       $.ajax({
 
         url : ajaxurl,
         type: 'post',
         data :{
           "digwp_y": y,
-  				"digwp_m" : m,
+  				"digwp_m" : m_number,
 				  "digwp_d" : d,
         action: 'japi_load_more'
         },
@@ -279,8 +366,32 @@ $(document).on('click','.previous', function(){
         }
 
       });
+      var dateListFull = $('#dom-target').children();
+
+      for(i=0;i<=dateListFull.length;i++){
+        var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+        if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+
+             $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+             //             console.log("this is the parent previous");
+
+  //           console.log("children"+($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().text()));
+
+        }
+        else{
+          $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+        }
 
 
+    /*
+        if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().hasClass("selected_box"))) {
+            $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+           console.log("no child has class previous");
+
+         }
+         */
+
+      }
 });
 
   /*--------------------------------------*/
@@ -289,7 +400,7 @@ $(document).on('click','.previous', function(){
   /*--------------------------------------*/
   /*--------------------------------------*/
   /*--------------------------------------*/
-  $(document).on('click','.archive-days', function(){
+$(document).on('click','.archive-days', function(){
 
     $('.next').removeClass('noclick');
     $('.next').addClass('Onclick');
@@ -301,15 +412,15 @@ $(document).on('click','.previous', function(){
       var dateArray = $(this).data('day');
       var split = dateArray.split(/[ ,]+/);
 
-      console.log("DATE:"+dateArray);
+  //    console.log("DATE:"+dateArray);
 
       var y = split[2];
       var m = split[0];
       var d = split[1];
 
-    //  console.log("year: "+y);
-    //  console.log("month: "+m);
-    //  console.log("day: " +d);
+      console.log("year: "+y);
+      console.log("month: "+m);
+      console.log("day: " +d);
 
       $('.selected_date').empty();
       $('.selected_date').append(dateArray);
@@ -327,16 +438,16 @@ $(document).on('click','.previous', function(){
             else{
               $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
-              console.log("removeClass:"+dateListFull.eq(i).text());
+    //          console.log("removeClass:"+dateListFull.eq(i).text());
             }
           }
-          console.log("Length of List of dates: "+ dateListFull.length);
+    //      console.log("Length of List of dates: "+ dateListFull.length);
     //  that.addclass(.japi_load_more)
 
     //Check if you clicked on the first object
       var First = $("#dom-target").children().first();
       var inner = First.text();
-      console.log("First Object:"+inner);
+    //  console.log("First Object:"+inner);
       if((' '+dateArray)===inner){
         $('.previous').removeClass('Onclick');
         $('.previous').addClass('noclick');
@@ -348,7 +459,7 @@ $(document).on('click','.previous', function(){
       }
       var Last = $("#dom-target").children().last();
       var inner = Last.text();
-      console.log("Last Object:"+inner);
+    //  console.log("Last Object:"+inner);
       if((' '+dateArray)===inner){
         $('.next').removeClass('Onclick');
         $('.next').addClass('noclick');
@@ -359,6 +470,12 @@ $(document).on('click','.previous', function(){
         console.log("CANT GO ANY FARTHER");
       }
 
+      function convertMonthNameToNumber(monthName) {
+          var myDate = new Date(monthName + " 1, 2000");
+          var monthDigit = myDate.getMonth();
+          return isNaN(monthDigit) ? 0 : (monthDigit + 1);
+      }
+      var m_number = convertMonthNameToNumber(m);
 
       $.ajax({
 
@@ -366,7 +483,7 @@ $(document).on('click','.previous', function(){
         type: 'post',
         data :{
           "digwp_y": y,
-  				"digwp_m" : m,
+  				"digwp_m" : m_number,
 				  "digwp_d" : d,
         action: 'japi_load_more'
         },
@@ -382,5 +499,23 @@ $(document).on('click','.previous', function(){
         }
 
       });
+
+      var dateListFull = $('#dom-target').children();
+
+      for(i=0;i<=dateListFull.length;i++){
+        var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+        if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+
+             $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+    //         console.log("this is the parent previous");
+
+  //           console.log("children"+($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().text()));
+
+        }
+        else{
+          $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+        }
+      }
+
 
   });

@@ -5,7 +5,7 @@
           $category = get_the_category( $id );
 
  ?>
-<div class="col-lg-4 <?php echo $category[0]->cat_name; ?>">
+<div class="<?php echo $category[0]->cat_name; ?>">
   <div class=" embed-responsive embed-responsive-16by9">
     <p id="Post_content"><?php the_content(); ?></p>
   </div>

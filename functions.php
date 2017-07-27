@@ -23,6 +23,7 @@ add_action('wp_enqueue_scripts', 'japi_include_enqueue');
 
 //$ajax_url_data= admin_url('admin-ajax.php');
 require get_template_directory() . '/ajax.php';
+require get_template_directory() . '/inc/theme-support.php';
 
 add_filter ('get_archives_link',
 function ($link_html, $url, $text, $format, $before, $after) {
