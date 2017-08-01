@@ -6,7 +6,35 @@ var Dates = $('#dom-target');
 
 $(document).ready(function(){
   //scroll to specific home page point
- $("html, body").animate({ scrollTop: 1012 }, 1000);
+
+
+  if (window.matchMedia("(min-width: 1440px) and (max-width: 2560px)").matches) {
+    $("html, body").animate({ scrollTop: 1000 }, 1000);
+  }
+
+/* the viewport is more than 1060 pixels wide */
+  if (window.matchMedia("(min-width: 1060px) and (max-width: 1439px)").matches) {
+    $("html, body").animate({ scrollTop: 998 }, 1000);
+  }
+  if (window.matchMedia("(min-width: 1024px) and (max-width: 1059px)").matches) {
+    $("html, body").animate({ scrollTop: 950 }, 1000);
+  }
+  if (window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches) {
+    $("html, body").animate({ scrollTop: 768 }, 1000);
+  }
+  if (window.matchMedia("(min-width: 425px) and (max-width: 767px)").matches) {
+    $("html, body").animate({ scrollTop: 615 }, 1000);
+  }
+  if (window.matchMedia("(min-width: 375px) and (max-width: 424px)").matches) {
+    $("html, body").animate({ scrollTop: 618 }, 1000);
+  }
+  if (window.matchMedia("(min-width: 320px) and (max-width: 374px)").matches) {
+    $("html, body").animate({ scrollTop: 608 }, 1000);
+  }
+  else {
+  /* the viewport is less than 1060 pixels wide */
+  }
+
 
  function hover_slide(){
     var id_mouseout;

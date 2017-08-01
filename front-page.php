@@ -20,7 +20,7 @@ Template Name: Front Page
                   <?php wp_get_archives(['type'=>'daily', 'format'=>'with_plus','order'=> 'ASC']); ?>
               </div>
 
-                  <ul style="list-style-type: none;padding: 0;">
+                  <ul id="year_style" style="list-style-type: none;">
 
                     <div class= "archive-years-container">
                     <div class='day_box'></div> <a class="archive-years"><?php echo $year; ?></a>
@@ -30,10 +30,10 @@ Template Name: Front Page
                       <?	$months = $wpdb->get_col("SELECT DISTINCT MONTH(post_date) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND YEAR(post_date) = '".$year."' ORDER BY post_date 	ASC");
                           foreach($months as $month) :
                           ?>
-                          <ul style="list-style-type: none;padding-left:10px;padding-right:0px;">
+                          <ul id="month_style"style="list-style-type: none;padding-left:10px;padding-right:0px;">
 
                             <div class= "archive-months-container">
-                              <div class='day_box' ></div> <a class="archive-months" id="<?php echo (date( 'F', mktime(0, 0, 0, $month))).''.$year ?>" > <?php echo date( 'F', mktime(0, 0, 0, $month) );?></a>
+                              <div class='day_box' ></div> <a class="archive-months" id="<?php echo (date( 'F', mktime(0, 0, 0, $month))).''.$year ?>" > <?php $dateObj = DateTime::createFromFormat('!m', $month); $monthName = $dateObj->format('F'); echo $monthName ?></a>
                             </div>
 
 
@@ -41,10 +41,10 @@ Template Name: Front Page
                             <?	$days = $wpdb->get_col("SELECT DISTINCT DAY(post_date) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND Month(post_date) = '".$month."' ORDER BY post_date 	ASC");
                                 foreach($days as $day) :
                                 ?>
-                                <ul  style="list-style-type: none;padding-right:0px;">
+                                <ul  id="day_style"style="list-style-type: none;padding-right:0px;">
 
-                                  <div class= "archive-days-container">
-                                    <div class='day_box' id="<?php echo (date( 'F', mktime(0, 0, 0, $month))).''.$day.''.$year ?>"></div> <a class="archive-days" data-day="<?php echo (date( 'F', mktime(0, 0, 0, $month))).' '.$day.', '.$year ?> "> <?php echo $day;?></a>
+                                  <div class= "archive-days-container archive-days" data-day="<?php $dateObj = DateTime::createFromFormat('!m', $month); $monthName = $dateObj->format('F'); echo $monthName.' '.$day.', '.$year ?> ">
+                                    <a class='day_box' id="<?php $dateObj = DateTime::createFromFormat('!m', $month); $monthName = $dateObj->format('F'); echo $monthName.''.$day.''.$year ?>"></a> <a class="archive-days" data-day="<?php $dateObj = DateTime::createFromFormat('!m', $month); $monthName = $dateObj->format('F'); echo $monthName.' '.$day.', '.$year ?> "> <?php echo $day;?></a>
                                   </div>
 
                                 </ul>
@@ -61,7 +61,7 @@ Template Name: Front Page
         </div>
 
         <div class="previous Onclick" type="button">
-          <img id="previous"src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/next.png" >
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/next.png" >
         </div>
 
         <div class="next Onclick" type="button">

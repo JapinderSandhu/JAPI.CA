@@ -19,7 +19,13 @@
 						$active = ( $i == 0 ? ' active' : '' );
 
             $link= wp_get_attachment_url( $attachment->ID );
+						if(strpos($link, ".jpeg")){
             //if link is jpg then print it as image
+						?>
+							<img class="item<?php echo $active; ?>" style="width: 100%; margin: auto;"src="<?php echo wp_get_attachment_url( $attachment->ID ); ?> "></img>
+
+						<?php
+					 	}
             if(strpos($link, ".jpg")){
 
               ?>
