@@ -99,6 +99,18 @@ LOG
         -Spacing for timeline and content needs to be adjusted when resizing the Page
 
         -Need to start creating the "Works" page, this will include my portfolio
+    ///////////////////////////////////////////////////////////
+    Thursday, July 27, 2017
+   
+         Completed:
+              -Polished mouseover mouseleave events
+              -fixed issues with date being in String type when AJAX required Integer type
+              -
+         Next Steps:
+             -Figure out alternative video hosting service
+             -Make loading speeds more efficient
+             
+             
 
     ///////////////////////////////////////////////////////////
     Tuesday, Aug 1, 2017

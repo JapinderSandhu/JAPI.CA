@@ -1,39 +1,240 @@
-//Global variable of all dates-children in a single Array
-var dateListFull = $('#dom-target').children();
-
 //Global variable of all dates in a single Array
 var Dates = $('#dom-target');
 
+//Global variable of all dates-children in a single Array
+var dateListFull = $('#dom-target').children();
+
+
+// var today = new Date();
+// var monthNames = ["January", "February", "March", "April", "May", "June",
+//   "July", "August", "September", "October", "November", "December"
+// ];
+//
+// var dd = today.getDate();
+// var mm = today.getMonth()+1; //January is 0!
+//
+// var yyyy = today.getFullYear();
+// if(dd<10){
+//     dd='0'+dd;
+// }
+// if(mm<10){
+//     mm='0'+mm;
+// }
+// mm=monthNames[mm];
+// var today = dd+' '+mm+', '+yyyy;
+// console.log(today+"todays date styl")
+//
+//
+// dateListFull.append("<p> <a>"+today+"</a></p>")
+//
+// console.log(($('#dom-target').children().last()).text())
+
+//Changes TITLE
+$(document).ready(function() {
+  var messages = [
+  'THANK YOU','FOR SUPPORTING','SELF','DISCOVERY',
+  'JAPI','JAPI','JAPI'
+  ,'LIVING IN THIRD PERSON','IN THIRD PERSON','living',
+  'A DREAM WITHIN', 'A DREAM', 'WITHIN A DREAM','JAPI','JAPI','JAPI',
+  'I DONT UNDERSTAND','MY FACE',
+  'JAPI','JAPI','JAPI'
+  ,'ARE YOU WATCHING CLOSELY?','CHAOS','CHAOS','CHAOS','CHAOS'
+  ,'BUT ALSO','PIZZA','IS PRETTY COOL',
+  'JAPI','JAPI','JAPI',
+  'ARE','YOU','REALLY LIVING?'
+  ,'JAPI','JAPI','JAPI'];
+  var index = -1;
+  var $changedTitle = $('#changed-title');
+
+
+
+  setInterval(function(){
+    //get the message at the next index, modding by the length so it wraps
+      console.log("helloyesyesyes");
+    var message = messages[++index % messages.length];
+    $changedTitle.text(message);
+  }, 1250);
+});
+
+//Media Queries change on window resize, allignment of background
+$(window).resize(function(){
+  if (window.matchMedia("(min-width: 1441px) and (max-width: 2560px)").matches) {
+
+    var scrollTop = (window.innerWidth-1440)/4.2 + 1060;
+    var marginHome = (window.innerWidth-1440)/5.22 + 179;
+    var positionY =  -window.innerWidth+1440 + (-721);
+    var marginBottom = (-window.innerWidth+1440)/2.2954 + window.innerHeight-834  + 225;
+
+    console.log(window.innerWidth);
+    console.log("Height:"+window.innerHeight);
+    var $el = $('#w');
+    var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+    console.log("Bottom of Wrapper: " + bottom);
+
+
+    console.log("scrollTop: " + scrollTop);
+    console.log("marginHome: " + marginHome);
+    console.log("positionY: " + positionY);
+    console.log("marginBottom: " + marginBottom);
+
+    $("#Home").css('margin-bottom', marginHome);
+    $("#w").css('background-position-y', positionY);
+    $("#w").css('margin-bottom', marginBottom);
+  }
+
+
+  if (window.matchMedia("(min-width: 769px) and (max-width: 1440px)").matches) {
+
+    var scrollTop = (window.innerWidth-1440)/4.2 + 1060;
+    var marginHome = (window.innerWidth-1440)/5.22 + 179;
+    var positionY =  -window.innerWidth+1440 + (-721);
+    var marginBottom = (-window.innerWidth+1440)/2.2954 + window.innerHeight-834  + 225;
+
+    console.log(window.innerWidth);
+    console.log("Height:"+window.innerHeight);
+    var $el = $('#w');
+    var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+    console.log("Bottom of Wrapper: " + bottom);
+
+
+    console.log("scrollTop: " + scrollTop);
+    console.log("marginHome: " + marginHome);
+    console.log("positionY: " + positionY);
+    console.log("marginBottom: " + marginBottom);
+
+    $("#Home").css('margin-bottom', marginHome);
+    $("#w").css('background-position-y', positionY);
+    $("#w").css('margin-bottom', marginBottom);
+  }
+
+});
+
+//Media Queries change on window load, allignment of background
+//mouseover mouse leave function for timeline
 $(document).ready(function(){
   //scroll to specific home page point
+  if (window.matchMedia("(min-width: 1441px) and (max-width: 2560px)").matches) {
+
+    var scrollTop = (window.innerWidth-1440)/4.2 + 1060;
+    var marginHome = (window.innerWidth-1440)/5.22 + 179;
+    var positionY =  -window.innerWidth+1440 + (-721);
+    var marginBottom = (-window.innerWidth+1440)/2.05 + window.innerHeight-834  + 225;
+
+    console.log(window.innerWidth);
+    console.log("Height:"+window.innerHeight);
+    var $el = $('#w');
+    var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+    console.log("Bottom of Wrapper: " + bottom);
 
 
-  if (window.matchMedia("(min-width: 1440px) and (max-width: 2560px)").matches) {
-    $("html, body").animate({ scrollTop: 1000 }, 1000);
+    console.log("scrollTop: " + scrollTop);
+    console.log("marginHome: " + marginHome);
+    console.log("positionY: " + positionY);
+    console.log("marginBottom: " + marginBottom);
+
+    $("html, body").animate({ scrollTop: scrollTop}, 1000);
+    $("#Home").css('margin-bottom', marginHome);
+    $("#w").css('background-position-y', positionY);
+    $("#w").css('margin-bottom', marginBottom);
   }
 
-/* the viewport is more than 1060 pixels wide */
-  if (window.matchMedia("(min-width: 1060px) and (max-width: 1439px)").matches) {
-    $("html, body").animate({ scrollTop: 998 }, 1000);
+
+  if (window.matchMedia("(min-width: 769px) and (max-width: 1440px)").matches) {
+
+    var scrollTop = (window.innerWidth-1440)/4.2 + 1060;
+    var marginHome = (window.innerWidth-1440)/5.22 + 179;
+    var positionY =  -window.innerWidth+1440 + (-721);
+    var marginBottom = (-window.innerWidth+1440)/2.2954 + window.innerHeight-834  + 225;
+
+    console.log(window.innerWidth);
+    console.log("Height:"+window.innerHeight);
+    var $el = $('#w');
+    var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+    console.log("Bottom of Wrapper: " + bottom);
+
+
+    console.log("scrollTop: " + scrollTop);
+    console.log("marginHome: " + marginHome);
+    console.log("positionY: " + positionY);
+    console.log("marginBottom: " + marginBottom);
+
+    $("html, body").animate({ scrollTop: scrollTop}, 1000);
+    $("#Home").css('margin-bottom', marginHome);
+    $("#w").css('background-position-y', positionY);
+    $("#w").css('margin-bottom', marginBottom);
   }
-  if (window.matchMedia("(min-width: 1024px) and (max-width: 1059px)").matches) {
-    $("html, body").animate({ scrollTop: 950 }, 1000);
+  if (window.matchMedia("(min-width: 426px) and (max-width: 768px)").matches) {
+      var scrollTop = (window.innerWidth-768)/9 + 747;
+      var marginHome = (window.innerWidth-768)/24  + 40;
+      var positionY =  (-window.innerWidth+768)/3 + (405);
+      var marginBottom = (-window.innerWidth+768)/2.45 + (window.innerHeight-689)  + 383;
+
+      console.log(window.innerWidth);
+      console.log("Height:"+window.innerHeight);
+      var $el = $('#w');
+      var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+      console.log("Bottom of Wrapper: " + bottom);
+
+
+      console.log("scrollTop: " + scrollTop);
+      console.log("marginHome: " + marginHome);
+      console.log("positionY: " + positionY);
+      console.log("marginBottom: " + marginBottom);
+
+      $("html, body").animate({ scrollTop: scrollTop}, 1000);
+      $("#Home").css('margin-bottom', marginHome);
+      $("#w").css('background-position-y', positionY);
+      $("#w").css('margin-bottom', marginBottom);
+
+      $("html, body").animate({ scrollTop: scrollTop}, 1000);
+
   }
-  if (window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches) {
-    $("html, body").animate({ scrollTop: 768 }, 1000);
+
+
+  if (window.matchMedia("(min-width: 320px) and (max-width: 425px)").matches) {
+    var scrollTop = (window.innerWidth-320)/4.2 + 593;
+    var marginHome = (window.innerWidth-320)/9 + 14;
+    var positionY =  (-window.innerWidth+320)/4 + (450);
+    var marginBottom = (-window.innerWidth+320)/2.62 + (window.innerHeight-689)  + 561;
+
+    console.log(window.innerWidth);
+    console.log("Height:"+window.innerHeight);
+    var $el = $('#w');
+    var bottom = $el.position().top + $el.offset().top + $el.outerHeight(true);
+    console.log("Bottom of Wrapper: " + bottom);
+
+
+    console.log("scrollTop: " + scrollTop);
+    console.log("marginHome: " + marginHome);
+    console.log("positionY: " + positionY);
+    console.log("marginBottom: " + marginBottom);
+
+    $("html, body").animate({ scrollTop: scrollTop}, 1000);
+    $("#Home").css('margin-bottom', marginHome);
+    $("#w").css('background-position-y', positionY);
+    $("#w").css('margin-bottom', marginBottom);
+
   }
-  if (window.matchMedia("(min-width: 425px) and (max-width: 767px)").matches) {
-    $("html, body").animate({ scrollTop: 615 }, 1000);
-  }
-  if (window.matchMedia("(min-width: 375px) and (max-width: 424px)").matches) {
-    $("html, body").animate({ scrollTop: 618 }, 1000);
-  }
-  if (window.matchMedia("(min-width: 320px) and (max-width: 374px)").matches) {
-    $("html, body").animate({ scrollTop: 608 }, 1000);
-  }
-  else {
-  /* the viewport is less than 1060 pixels wide */
-  }
+
+
+
+  /*  if (window.matchMedia("(min-width: 425px) and (max-width: 767px)").matches) {
+      $("html, body").animate({ scrollTop: 608 }, 1000);
+    }
+    //IPHONE 6S PLUS
+    if (window.matchMedia("(min-width: 414px) and (max-width: 424px)").matches) {
+      $("html, body").animate({ scrollTop: 607 }, 1000);
+    }
+    if (window.matchMedia("(min-width: 375px) and (max-width: 413px)").matches) {
+      $("html, body").animate({ scrollTop: 602 }, 1000);
+    }
+    if (window.matchMedia("(min-width: 320px) and (max-width: 374px)").matches) {
+      $("html, body").animate({ scrollTop: 593 }, 1000);
+    }
+    else {
+    /* the viewport is less than 1060 pixels wide */
+
+
 
 
  function hover_slide(){
@@ -44,12 +245,8 @@ $(document).ready(function(){
      $('#'+this.id+"-monthList").slideDown("slow");
      id_mouseout = '#'+this.id+"-monthList"
     // console.log("slidedown mouseover: "+ id_mouseout);
-
-
-
-    });
-    //This will slide Up the list of dates on mouseover
-    $(".timeline").mouseleave(function(){
+    $("."+this.id+"-monthList").mouseleave(function(){
+  //  $(".timeline").mouseleave(function(){
 
 
      for(i=0;i<=dateListFull.length;i++){
@@ -60,6 +257,12 @@ $(document).ready(function(){
        }
      }
    });
+
+
+
+  });
+    //This will slide Up the list of dates on mouseover
+
  }
  hover_slide()
 });
@@ -70,8 +273,11 @@ $(document).ready(function(){
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
-$(document).ready(function(){
 
+//Load latest video on front page, show most recent post, activate Live title
+function Reload(){
+
+  $('#live_title').addClass('title_click');
 
 
   $('.next').removeClass('Onclick');
@@ -104,6 +310,9 @@ $(document).ready(function(){
 
       $('#' +split[1]+split[2]+split[3]).removeClass("day_box");
       $('#' +split[1]+split[2]+split[3]).addClass("selected_box");
+      $('#_' +split[1]+split[2]+split[3]).addClass("selected_text");
+
+
 
   //    console.log("DATE: "+dateArray.trim());
   var dateListFull = $('#dom-target').children();
@@ -150,7 +359,8 @@ $(document).ready(function(){
         }
 
       });
-});
+  }
+$(document).ready(Reload());
 
 
   /*--------------------------------------*/
@@ -159,8 +369,9 @@ $(document).ready(function(){
   /*--------------------------------------*/
   /*--------------------------------------*/
   /*--------------------------------------*/
-
+//when click on next day arrow
 $(document).on('click','.next', function(){
+  //because on load, you can not go to a previous post as it loads the latest post, the previous button has class noclick, this will remove class noclick
   $('.previous').removeClass('noclick');
   $('.previous').addClass('Onclick');
     console.log("next");
@@ -223,8 +434,11 @@ $(document).on('click','.next', function(){
             if(dateListFull.eq(i).text()==dateArray){
               $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("day_box");
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_box");
+              $('#_' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_text");
+
             }
             else{
+              $('#_' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_text");
               $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
           //    console.log("removeClass"+dateListFull.eq(i).text());
@@ -233,6 +447,7 @@ $(document).on('click','.next', function(){
         //  console.log("Length of List of dates: "+ dateListFull.length);
 
     //  that.addclass(.japi_load_more)
+    //converts month as a string name to the number corresponding to the month ex. August = 08
     function convertMonthNameToNumber(monthName) {
         var myDate = new Date(monthName + " 1, 2000");
         var monthDigit = myDate.getMonth();
@@ -356,8 +571,10 @@ $(document).on('click','.previous', function(){
               if(dateListFull.eq(i).text()==dateArray){
                 $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("day_box");
                 $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_box");
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_text");
               }
               else{
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_text");
                 $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
                 $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
         //        console.log("removeClass"+dateListFull.eq(i).text());
@@ -462,11 +679,13 @@ $(document).on('click','.archive-days', function(){
             if(dateListFull.eq(i).text()==(' '+dateArray)){
               $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("day_box");
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_box");
+              $('#_' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_text");
             }
             else{
+              $('#_' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_text");
               $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
-    //          console.log("removeClass:"+dateListFull.eq(i).text());
+              //          console.log("removeClass:"+dateListFull.eq(i).text());
             }
           }
     //      console.log("Length of List of dates: "+ dateListFull.length);
@@ -547,3 +766,120 @@ $(document).on('click','.archive-days', function(){
 
 
   });
+
+
+
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*---------------LIVETITLE--------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+$(document).on('click','#live_title', function(){
+  $('#Code').hide();
+  $('#Film').hide();
+  $('#Live').show();
+  $('.title_click').removeClass('title_click');
+  $('#live_title').addClass('title_click');
+
+  //reloads content on live page from first post
+  Reload();
+
+
+});
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*---------------CODETITLE--------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+var loadedBooleanCode = false;
+
+$(document).on('click','#code_title', function(){
+    $('#Live').hide();
+    $('#Film').hide();
+    $('#Code').show();
+    $('.title_click').removeClass('title_click');
+    $('#code_title').addClass('title_click');
+    var ajaxurl = $('#dom-target').data('url');
+
+ //prevent from sending AJAX multiple times
+ //prevent from loading same tab multiple times
+    if(loadedBooleanCode===false){
+      loadedBooleanCode=true;
+
+      $.ajax({
+
+        url : ajaxurl,
+        type: 'post',
+        data :{
+
+        action: 'japi_code_tab'
+        },
+        error:function(response){
+          console.log(response);
+          console.log("FAILURE");
+        },
+        success:function(response){
+          $('.Post-container').empty();
+          console.log("success");
+          $('#Code').hide().prepend(response).fadeIn('slow');
+
+        }
+
+      });
+
+
+    }
+
+
+});
+
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*---------------FILMTITLE--------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+  var loadedBooleanFilm = false;
+
+$(document).on('click','#film_title', function(){
+  $('#Live').hide();
+  $('#Code').hide();
+  $('#Film').show();
+  $('.title_click').removeClass('title_click');
+  $('#film_title').addClass('title_click');
+
+  var ajaxurl = $('#dom-target').data('url');
+
+  if(loadedBooleanFilm===false){
+    loadedBooleanFilm=true;
+
+  $.ajax({
+
+    url : ajaxurl,
+    type: 'post',
+    data :{
+
+    action: 'japi_film_tab'
+    },
+    error:function(response){
+      console.log(response);
+      console.log("FAILURE");
+    },
+    success:function(response){
+      $('.Post-container').empty();
+      console.log("success");
+      $('#Film').hide().prepend(response).fadeIn('slow');
+
+    }
+
+  });
+  }
+
+
+
+});

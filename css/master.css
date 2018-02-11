@@ -1,51 +1,3 @@
-
-/*--------------------------------------*/
-/*--------------------------------------*/
-/*-------------------Nav----------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
-
-
-#nav_container{
-  top: 0;
-  z-index: 100;
-  overflow:auto;
-  position: fixed;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  background: white;
-}
-
-a {
-    text-decoration: none;
-}
-
-.list li {
-  display: inline-block;
-}
-.list a:hover {
-  color:pink;
-}
-.list a:visited {
-  color:Black;
-}
-.list a:active {
-  color:red;
-}
-.list a:link {
-  color:Black;
-}
-
-.liElement{
-  letter-spacing: 2px;
-  padding-left:4%;
-
-}
-
-
-
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*----------------Content---------------*/
@@ -78,23 +30,69 @@ body{
   height: 50%;
   width: 50%;
   margin-left: 25%;
-  margin-bottom: 10%;
 }
 
 
 #w {
   position: relative;
-  background:  url(../assets/media/1920x1080/scroll.png);
+  background:  url(../assets/media/1920x1080/scroll.jpg);
   background-repeat: no-repeat;
   background-size:100%;
-margin-right: 17%;
-margin-left: 21%;
+  margin-right: 17%;
+  margin-left: 21%;
   height: 100%;
-  margin-bottom: 20%;
 }
 
-
 /*--------------------------------------*/
+/*--------------------------------------*/
+/*----------------NAV-------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+.title_click{
+  border: 3px solid yellow;
+}
+
+.navigation{
+    list-style:none;
+    margin:0;
+    padding-right:35px;
+    text-align:center;
+    text-decoration:  none;
+
+    /*border: 3px solid yellow;*/
+}
+.navigation li{
+    padding:30px;
+    display:inline-block;
+    list-style: none;
+    text-decoration:none;
+}
+.navigation li a{
+    display:inline-block;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+/*--------------------------------------*/
+/*----------------CODE------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+#Gimbal1{
+  border: 3px solid orange;
+}
+#Gimbal3{
+  width:150px;
+}
+/*---------------------------.navigation li:hover{
+  list-style:none;
+  text-decoration: none;
+}
+color: #377bb5;-----------*/
 /*--------------------------------------*/
 /*----------------LIVE------------------*/
 /*--------------------------------------*/
@@ -151,7 +149,6 @@ display: inline-block;
   position: relative;
   min-height: 590px;
   max-height: 755px;
-
 }
 
 #Live{
@@ -193,6 +190,11 @@ display: inline-block;
   overflow:hidden;
   margin-left: 33%;
 }
+.Instagram{
+  margin: 0 auto;
+  width: 25%;
+  height: 1%;
+}
 
 #may13_2017_post_1{
   padding-bottom: 30px;
@@ -210,23 +212,40 @@ display: inline-block;
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
+ul{
+  text-decoration: none;
+  list-style: none;
+}
+
+a:link    {
+  color: #377bb5;
+text-decoration: none;
+list-style: none;
+
+  }
+a:visited {
+  color: #377bb5;
+text-decoration: none;
+list-style: none;
+
+  }
+a:hover   {
+  color: #377bb5;
+text-decoration: none;
+list-style: none;
+
+  }
+a:active  {
+  color: #377bb5;
+text-decoration: none;
+list-style: none;
+
+  }
 
 .hidden{
 display: none;
 }
 
-.archive-years{
-  position: relative;
-  margin-right: 40px;
-}
-.archive-months-container{
-  position: relative;
-  margin-right: 40px;
-}
-.archive-days-container{
-  position: relative;
-  margin-right: 40px;
-}
 
 .day_box{
   vertical-align: middle;
@@ -242,7 +261,15 @@ display: none;
   height:3px;
   width: 30px;
   background-color: #8E5B70;
+
 }
+.selected_text:hover {
+  color: #8E5B70;
+}
+.selected_text {
+  color: #8E5B70;
+}
+
 
 
 .timeline{
@@ -256,7 +283,7 @@ z-index: 10;
 .noclick{
   opacity: 0.5;
   cursor: not-allowed;
-  /*border: 3px solid pink;*/
+
   pointer-events:none
 
 }
@@ -301,80 +328,278 @@ opacity: 0.5;
   height: 40px;
   font-size: 20px;
   text-align: center;
-
-
   transform: perspective(50em) rotateX(50deg);
-
 }
+
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------MEDIA QUERIES KEYFRAME--------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
 /*--------------------------------------*/
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+  .archive-years{
+    text-decoration: none;
 
-
-@media screen and (min-width: 1440px) {
-    #w {
-    background-position-y: -779px;
-    margin-bottom: 50%;
-    }
-    .timeline{
-    position: absolute;
-    font-size: small;
-    width: 250px;
-    z-index: 10;
-    margin-left: -50px;
-    }
-    #day_style{
-      padding-left: 40px;
-      margin-right:50px;
-    }
-}
-/* the viewport is more than 1060 pixels wide*/
-@media screen and (min-width: 1060px)and (max-width: 1439px){
-  #w {
-  background-position-y: -779px;
-  margin-bottom: 30%;
+    font-weight: bold;
+    font-size: 20px;
   }
+
+
+
+  #Post_title{
+    font-weight: bold;
+    font-size: 23px;
+  }
+
   .timeline{
   position: absolute;
-  font-size: small;
-  width: 250px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 300px;
   z-index: 10;
-  margin-left: -50px;
+  margin-left: -150px;
   }
-  #day_style{
-    padding-left: 40px;
-    margin-right:50px;
-  }
-}
 
-/* the viewport is more than 1024 pixels wide*/
-@media screen and (min-width: 1024px) and (max-width: 1059px) {
-    #w {
-    background-position-y: -315.2px;
-    margin-bottom: 50%;
-    }
+
+  #day_style{
+    padding-right: 0px;
+    padding-left: 10px;
+    margin-right:0px;
+  }
+  #month_style{
+    padding-left: 20px;
+    padding-right: 0px;
+    list-style: none;
+
+
+
+  }
+  #year_style{
+    padding-left: 0px;
+    padding-right: 0px;
+
+  }
+
+
+  .Post-container{
+  max-height: 100%;
+  }
     .timeline{
     position: absolute;
-    font-size: small;
-    width: 250px;
+    font-size: 18px;
+    width: 200px;
     z-index: 10;
-    margin-left: -50px;
+    margin-left: 0px;
+    }
+
+    .Vlog{
+      position: relative;
+      overflow:hidden;
+      margin: 0 auto;
+      max-width: 70%;
+    }
+    .Vlog_Large{
+      position: relative;
+      overflow:hidden;
+      margin: 0 auto;
+      max-width: 50%;
+    }
+    .Gallery{
+      overflow: hidden;
+      margin:0 auto;
+      margin-top: 20px;
+      max-width: 400px;
+      max-height: 900px;
+      margin-bottom: 20px;
 
     }
+    .Music{
+      position: relative;
+      overflow:hidden;
+      margin-left: 33%;
+      margin-top: 10px;
+      margin: 0 auto;
+      max-width: 40%;
+    }
+    .selected_date{
+      vertical-align: top;
+      line-height: 40px;
+      font-size: 40px;
+    }
+    .selected_date_wrapper{
+      margin-top: 10px;
+      background:  url(../assets/media/1920x1080/timeline.png);
+      background-repeat: no-repeat;
+      background-size:100%;
+      height:70px;
+    }
+
+    .previous > img{
+    }
+    .next > img{
+    }
+    .previous{
+    position: absolute;
+    z-index: 12;
+    margin-top: 95px;
+    margin-left: 80%;
+    opacity: 0.5;
+    }
+
+    .next{
+    position: absolute;
+    z-index: 10;
+    margin-top: 123px;
+    margin-left: 81%;
+    opacity: 0.5;
+    }
+    .selected_box{
+      vertical-align: middle;
+      display: inline-block;
+      height:3px;
+      width: 20px;
+      background-color: #8E5B70;
+    }
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .archive-years{
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #Post_title{
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .timeline{
+    margin-left: -125px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 15px;
+    width: 310px;
+    z-index: 10;
+    }
+
     #day_style{
-      padding-left: 20px;
-      margin-right:78px;
+      padding-right: 0px;
+      padding-left: 10px;
+      margin-right:0px;
+    }
+    #month_style{
+      padding-left: 15px;
+      padding-right: 0px;
+      list-style: none;
+
+
+    }
+    #year_style{
+      padding-left: 145px;
+      padding-right: 0px;
+
     }
 }
+
+
+/* the viewport is more than 1024 pixels wide*/
+@media screen and (min-width: 800px) and (max-width: 1024px){
+
+  .archive-years{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+
+  #Post_title{
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .timeline{
+
+    margin-top: 50px;
+    overflow: hidden;
+  position: absolute;
+  font-weight: bold;
+  font-size: 15px;
+  width: 310px;
+  max-height: 550px;
+  z-index: 10;
+  margin-left: -170px;
+  }
+
+
+  #day_style{
+    padding-right: 0px;
+    padding-left: 10px;
+    margin-right:0px;
+  }
+  #month_style{
+    padding-left: 0px;
+    padding-right: 0px;
+    list-style: none;
+
+  }
+  #year_style{
+    padding-left: 165px;
+    padding-right: 0px;
+
+  }
+  .selected_date_wrapper{
+    vertical-align: middle;
+    line-height: 15px;
+
+  }
+  .Vlog{
+    position: relative;
+    overflow:hidden;
+    margin: 0 auto;
+    max-width: 40%;
+  }
+  .Vlog_Large{
+    position: relative;
+    overflow:hidden;
+    margin: 0 auto;
+    max-width: 55%;
+  }
+  .Gallery{
+    overflow: hidden;
+    margin:0 auto;
+    margin-top: 20px;
+    max-width: 200px;
+    max-height: 300px;
+    margin-bottom: 20px;
+
+  }
+  .Music{
+    position: relative;
+    overflow:hidden;
+    margin-left: 33%;
+    margin-top: 10px;
+    margin: 0 auto;
+    max-width: 35%;
+  }
+
+}
 /* the viewport is more than 768 pixels wide less than 1023*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    #w {
-    background-position-y: -54px;
-    margin-bottom: 70.8%;
+@media screen and (min-width: 768px) and (max-width: 799px) {
+  .archive-years{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+
+
+    #Home{
+      margin-bottom: 40px;
     }
+
     #Live{
       overflow: visible;
       min-height:0px;
@@ -382,18 +607,25 @@ opacity: 0.5;
     #content{
       overflow:visible;
     }
+    body{
+      background:  url(../assets/media/mobile/Websitehome.jpg);
+      background-position: center no-repeat;
+      background-size: 100%;
+      background-attachment: fixed;
+    }
     #w {
-    background:  url(../assets/media/mobile/scroll.png);
+    background:  url(../assets/media/mobile/scroll.jpg);
     background-size:100%;
-    background-position-y: 426px;
-    margin-bottom: 60%;
+    background-position-y: 405px;
+    margin-bottom: 383px;
     }
     .timeline{
     position: absolute;
-    font-size: small;
+    font-weight: bold;
+    font-size: 15px;
     width: 250px;
     z-index: 10;
-    margin-left: -140px;
+    margin-left: -155px;
     }
     .Vlog{
       position: relative;
@@ -430,6 +662,10 @@ opacity: 0.5;
       background-repeat: no-repeat;
       background-size:100%;
     }
+    .selected_date{
+      line-height: 18px;
+      font-size: 16px;
+    }
 
     .previous > img{
       max-width: 200px;
@@ -461,11 +697,12 @@ opacity: 0.5;
     }
     #day_style{
       padding-right: 0px;
-      padding-left: 30px;
-      margin-right:120px;
+      padding-left: 15px;
+      margin-right:110px;
     }
     #month_style{
-      padding-left: 30px;
+      padding-left: 25px;
+      list-style: none;
 
 
     }
@@ -477,112 +714,138 @@ opacity: 0.5;
 
 
 }
-@media screen and (min-width: 425px) and (max-width: 767px) {
 
-  #Live{
-    overflow: visible;
-    min-height:0px;
+@media screen and (min-width: 426px) and (max-width: 767px) {
+  .archive-years{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
   }
-  #content{
-    overflow:visible;
-  }
-  #w {
-  background:  url(../assets/media/mobile/scroll.png);
-  background-size:100%;
-  background-position-y: 426px;
-  margin-bottom: 135%;
-  }
-  .timeline{
-  position: absolute;
-  font-size: x-small;
-  width: 250px;
-  z-index: 10;
-  margin-left: -110px;
-  }
-  .Vlog{
-    position: relative;
-    overflow:hidden;
-    margin: 0 auto;
-    max-width: 80%;
-  }
-  .Vlog_Large{
-    position: relative;
-    overflow:hidden;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  .Gallery{
-    overflow: hidden;
-    margin:0 auto;
-    margin-top: 20px;
-    max-width: 150px;
-    max-height: 300px;
-    margin-bottom: 20px;
 
-  }
-  .Music{
-    position: relative;
-    overflow:hidden;
-    margin-left: 33%;
-    margin-top: 10px;
-    margin: 0 auto;
-    max-width: 70%;
-    max-height: 50%;
-  }
-  .selected_date_wrapper{
-    margin-top: -90px;
-    background:  url(../assets/media/1920x1080/timeline.png);
-    background-repeat: no-repeat;
+
+    #Live{
+      overflow: visible;
+      min-height:0px;
+    }
+    #content{
+      overflow:visible;
+    }
+    body{
+      background:  url(../assets/media/mobile/Websitehome.jpg);
+      background-position: center no-repeat;
+      background-size: 100%;
+      background-attachment: fixed;
+    }
+    #w {
+    background:  url(../assets/media/mobile/scroll.jpg);
     background-size:100%;
-  }
+    }
+    .timeline{
+    position: absolute;
+    font-weight: bold;
+    font-size: 15px;
+    width: 250px;
+    z-index: 10;
+    margin-left: -155px;
+    }
+    .Vlog{
+      position: relative;
+      overflow:hidden;
+      margin: 0 auto;
+      max-width: 70%;
+    }
+    .Vlog_Large{
+      position: relative;
+      overflow:hidden;
+      margin: 0 auto;
+      max-width: 80%;
+    }
+    .Gallery{
+      overflow: hidden;
+      margin:0 auto;
+      margin-top: 20px;
+      max-width: 200px;
+      max-height: 300px;
+      margin-bottom: 20px;
 
-  .previous > img{
-    max-width: 40px;
-  }
-  .next > img{
-    max-width: 55px;
-  }
-  .previous{
-  position: absolute;
-  z-index: 12;
-  margin-top: 95px;
-  margin-left: 95%;
-  opacity: 0.5;
-  }
+    }
+    .Music{
+      position: relative;
+      overflow:hidden;
+      margin-left: 33%;
+      margin-top: 10px;
+      margin: 0 auto;
+      max-width: 40%;
+    }
+    .selected_date_wrapper{
+      margin-top: 0px;
+      background:  url(../assets/media/1920x1080/timeline.png);
+      background-repeat: no-repeat;
+      background-size:100%;
+    }
+    .selected_date{
+      line-height: 18px;
+      font-size: 16px;
+    }
 
-  .next{
-  position: absolute;
-  z-index: 10;
-  margin-top: 115px;
-  margin-left: 99%;
-  opacity: 0.5;
-  }
-  .selected_box{
-    vertical-align: middle;
-    display: inline-block;
-    height:3px;
-    width: 20px;
-    background-color: #8E5B70;
-  }
-  #day_style{
-    padding-right: 0px;
-    padding-left: 30px;
-    margin-right:120px;
-  }
-  #month_style{
-    padding-left: 30px;
+    .previous > img{
+      max-width: 200px;
+    }
+    .next > img{
+      max-width: 115px;
+    }
+    .previous{
+    position: absolute;
+    z-index: 12;
+    margin-top: 95px;
+    margin-left: 101%;
+    opacity: 0.5;
+    }
+
+    .next{
+    position: absolute;
+    z-index: 10;
+    margin-top: 123px;
+    margin-left: 105%;
+    opacity: 0.5;
+    }
+    .selected_box{
+      vertical-align: middle;
+      display: inline-block;
+      height:3px;
+      width: 20px;
+      background-color: #8E5B70;
+    }
+    #day_style{
+      padding-right: 0px;
+      padding-left: 15px;
+      margin-right:110px;
+    }
+    #month_style{
+      padding-left: 25px;
+      list-style: none;
 
 
-  }
-  #year_style{
-    padding-left: 10px;
+    }
+    #year_style{
+      padding-left: 10px;
 
-  }
+    }
 
 
 }
 
-@media screen and (min-width: 375px) and (max-width: 424px) {
+
+
+/* the viewport is more than 414 pixels wide less than 424 IPHONE 6S PLUS*/
+@media screen and (min-width: 414px) and (max-width: 425px) {
+  .archive-years{
+    text-decoration: none;
+
+    font-weight: bold;
+  }
+
+
 
   #Live{
     overflow: visible;
@@ -591,18 +854,24 @@ opacity: 0.5;
   #content{
     overflow:visible;
   }
+  body{
+    background:  url(../assets/media/mobile/Websitehome.jpg);
+    background-position: center no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+  }
   #w {
-  background:  url(../assets/media/mobile/scroll.png);
+  background:  url(../assets/media/mobile/scroll.jpg);
   background-size:100%;
-  background-position-y: 450px;
-  margin-bottom: 160%;
+
   }
   .timeline{
+  font-weight: bold;
   position: absolute;
   font-size: x-small;
-  width: 250px;
+  width: 135px;
   z-index: 10;
-  margin-left: -110px;
+  margin-left: -105px;
   }
   .Vlog{
     position: relative;
@@ -669,25 +938,30 @@ opacity: 0.5;
     background-color: #8E5B70;
   }
   #day_style{
-
     padding-right: 0px;
-    padding-left: 10px;
-    margin-right:120px;
+    padding-left: 15px;
+    margin-right:0px;
   }
   #month_style{
-    padding-left: 20px;
-
-
+    padding-left: 15px;
+    padding-right: 0;
   }
   #year_style{
-    padding-left: 20px;
-
+    padding-left: 0px;
   }
+
 
 
 }
 
-@media screen and (min-width: 320px) and (max-width: 374px) {
+@media screen and (min-width: 375px) and (max-width: 413px) {
+  .archive-years{
+    text-decoration: none;
+
+    font-weight: bold;
+  }
+
+
 
   #Live{
     overflow: visible;
@@ -696,24 +970,35 @@ opacity: 0.5;
   #content{
     overflow:visible;
   }
+  body{
+    background:  url(../assets/media/mobile/Websitehome.jpg);
+    background-position: center no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+  }
   #w {
-  background:  url(../assets/media/mobile/scroll.png);
+  background:  url(../assets/media/mobile/scroll.jpg);
   background-size:100%;
-  background-position-y: 465px;
-  margin-bottom: 264.8%;
+  /*background-position-y: 434px;
+  margin-bottom: 540px;*/
+
+  }
+  #Home{
+    /*margin-bottom: 20px;*/
   }
   .timeline{
+    font-weight: bold;
   position: absolute;
   font-size: x-small;
-  width: 250px;
+  width: 125px;
   z-index: 10;
-  margin-left: -110px;
+  margin-left: -100px;
   }
   .Vlog{
     position: relative;
     overflow:hidden;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 80%;
   }
   .Vlog_Large{
     position: relative;
@@ -736,9 +1021,127 @@ opacity: 0.5;
     margin-left: 33%;
     margin-top: 10px;
     margin: 0 auto;
+    max-width: 70%;
+    max-height: 50%;
+  }
+  .selected_date_wrapper{
+    margin-top: -90px;
+    background:  url(../assets/media/1920x1080/timeline.png);
+    background-repeat: no-repeat;
+    background-size:100%;
+  }
+  .previous > img{
+    max-width: 40px;
+  }
+  .next > img{
+    max-width: 55px;
+  }
+  .previous{
+  position: absolute;
+  z-index: 12;
+  margin-top: 95px;
+  margin-left: 92%;
+  opacity: 0.5;
+  }
+
+  .next{
+  position: absolute;
+  z-index: 10;
+  margin-top: 115px;
+  margin-left: 96%;
+  opacity: 0.5;
+  }
+  .selected_box{
+    vertical-align: middle;
+    display: inline-block;
+    height:3px;
+    width: 20px;
+    background-color: #8E5B70;
+  }
+
+  #day_style{
+    padding-right: 0px;
+    padding-left: 5px;
+    margin-right:0px;
+  }
+  #month_style{
+    padding-left: 10px;
+    padding-right: 0;
+    list-style: none;
+
+  }
+  #year_style{
+    padding-left: 0px;
+  }
+
+
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .archive-years{
+    text-decoration: none;
+
+    font-weight: bold;
+  }
+
+  #Live{
+    overflow: visible;
+    min-height:0px;
+  }
+  #content{
+    overflow:visible;
+  }
+  body{
+    background:  url(../assets/media/mobile/Websitehome.jpg);
+    background-position: center no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+  }
+
+  #w {
+  background:  url(../assets/media/mobile/scroll.jpg);
+  background-size:100%;
+  }
+  .timeline{
+    font-weight: bold;
+  position: absolute;
+  font-size: x-small;
+  width: 130px;
+  z-index: 10;
+  margin-left: -95px;
+  }
+  .Vlog{
+    position: relative;
+    overflow:hidden;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .Vlog_Large{
+    position: relative;
+    overflow:hidden;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .Gallery{
+    overflow: hidden;
+    margin:0 auto;
+    margin-top: 20px;
+    max-width: 130px;
+    max-height: 300px;
+    margin-bottom: 20px;
+
+  }
+  .Music{
+    position: relative;
+    overflow:hidden;
+    margin-left: 33%;
+    margin-top: 10px;
+    margin: 0 auto;
     max-width: 90%;
 
   }
+
   .selected_date_wrapper{
     margin-top: -90px;
     background:  url(../assets/media/1920x1080/timeline.png);
@@ -766,6 +1169,7 @@ opacity: 0.5;
   margin-left: 96%;
   opacity: 0.5;
   }
+
   .selected_box{
     vertical-align: middle;
     display: inline-block;
@@ -774,22 +1178,22 @@ opacity: 0.5;
     background-color: #8E5B70;
   }
   #day_style{
-
     padding-right: 0px;
-    padding-left: 10px;
-    margin-right:120px;
+    padding-left: 5px;
+    margin-right:0px;
   }
   #month_style{
-    padding-left: 20px;
-
+    padding-left: 10px;
+    padding-right: 0;
+    list-style: none;
 
   }
   #year_style{
-    padding-left: 20px;
-
+    padding-left: 0px;
   }
 
 }
+
 
 
 /*--------------------------------------*/
@@ -826,3 +1230,4 @@ opacity: 0.5;
 
 
 .Post_title{border: 3px solid green;}
+*/

@@ -34,10 +34,15 @@
               <?php
               //if link is video then print it as video
 
-            }elseif(strpos($link, ".mp4")) { ?>
-              <video class="item<?php echo $active; ?>" style="max-width: 100%;max-height: 100%; margin: 0 auto; padding-left:30px; padding-right:30px;" controls> <source src="<?php echo wp_get_attachment_url( $attachment->ID ); ?>" type="video/mp4"></video>
+            }
+						elseif(strpos($link, ".mp4")) { ?>
+              <video class="item<?php echo $active; ?>" style="max-width: 100%;max-height: 100%; margin: 0 auto; padding-left:30px; padding-right:30px;" controls="controls"> <source src="<?php echo wp_get_attachment_url( $attachment->ID ); ?>" type="video/mp4"></video>
 
-          <?php } ?>
+          <?php } elseif(strpos($link, ".mov")) {?>
+
+						<video class="item<?php echo $active; ?>" style="max-width: 100%;max-height: 100%; margin: 0 auto; padding-left:30px; padding-right:30px;" controls="controls" src="<?php echo wp_get_attachment_url( $attachment->ID ); ?>" type="video/mov"></video>
+
+				<?php } ?>
 
 					<?php $i++; endforeach; ?>
 

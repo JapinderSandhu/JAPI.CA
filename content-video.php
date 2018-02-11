@@ -6,7 +6,7 @@
 
  ?>
 
-<h3 id="Post_title"><?php the_title(); ?></h3>
+<h3 id="Post_title" style="overflow-y: hidden;"><?php the_title(); ?></h3>
 
 <div class="<?php echo $category[0]->cat_name; ?>">
   <div class="embed-responsive embed-responsive-16by9">

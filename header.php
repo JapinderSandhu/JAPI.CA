@@ -2,11 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>JAPI</title>
+    <title id="changed-title">JAPI</title>
     <?php wp_head(); ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/css/master.css'); ?>" type="text/css" media="screen, projection" />
+    <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" type="image/x-icon" />
 
 <!--
             <nav id="nav_container">
