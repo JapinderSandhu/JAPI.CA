@@ -101,6 +101,15 @@ body{
     margin-left: 34%;
 }
 
+.Intro{
+  color:white;
+}
+
+.Intro2{
+  color:red;
+}
+
+
 /*---------------------------.navigation li:hover{
   list-style:none;
   text-decoration: none;

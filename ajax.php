@@ -67,10 +67,10 @@ function japi_load_more(){
 
 function japi_welcome(){
   ?>
-  <section class="col-lg-12 col-sm-8 col-centered">
+  <section class="col-lg-12 col-sm-8 col-centered padding-bottom-md">
     <div class="row">
       <div class="col-lg-4 col-sm-6 text-center">
-        <div id="myCarousel_Welcome" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -97,12 +97,6 @@ function japi_welcome(){
               <img id="me5" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me5.jpg" alt="logo"/>
             </div>
             <div class="item">
-              <img id="me6" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me6.png" alt="logo"/>
-            </div>
-            <div class="item">
-              <img id="me7" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me7.png" alt="logo"/>
-            </div>
-            <div class="item">
               <img id="me8" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me8.jpg" alt="logo"/>
             </div>
           </div>
@@ -123,6 +117,24 @@ function japi_welcome(){
 
   </section>
 
+  <p class="Intro">
+
+     Hey! Thank you for supporting me on this journey. Seeing visitors drives me to keep creating.
+
+     Combining art and science is what inspires me.
+
+     Forgive me as the site does not work on Mobile.
+     Soon I will have the FILM and CODE tabs Completed.
+
+            >Last update as of Wednesday, February 14, 2018.
+
+  </p>
+  <p class="Intro2">
+       If you are looking to see my projects please head over to https://github.com/JapinderSandhu.
+
+       If you would like to see the code for this site and or want my resume please email me at salutations@japi.ca.
+
+     </p>
 
   <?php
   wp_reset_postdata();
