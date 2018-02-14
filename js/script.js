@@ -4,30 +4,20 @@ var Dates = $('#dom-target');
 //Global variable of all dates-children in a single Array
 var dateListFull = $('#dom-target').children();
 
+//create function for retreiving last date, splitting it and giving date object
+var last_Date = $('#dom-target').children().last();
+var dateArray = last_Date.text();
+var split = dateArray.split(/[ ,]+/);
 
-// var today = new Date();
-// var monthNames = ["January", "February", "March", "April", "May", "June",
-//   "July", "August", "September", "October", "November", "December"
-// ];
-//
-// var dd = today.getDate();
-// var mm = today.getMonth()+1; //January is 0!
-//
-// var yyyy = today.getFullYear();
-// if(dd<10){
-//     dd='0'+dd;
-// }
-// if(mm<10){
-//     mm='0'+mm;
-// }
-// mm=monthNames[mm];
-// var today = dd+' '+mm+', '+yyyy;
-// console.log(today+"todays date styl")
-//
-//
-// dateListFull.append("<p> <a>"+today+"</a></p>")
-//
-// console.log(($('#dom-target').children().last()).text())
+var y = split[3];
+var m = split[1];
+var d = split[2];
+//adding welcome to timeline
+$("<ul id='day_style'> <div class='archive-days-container archive-days' data-day='Welcome'> <a class='day_box' id='Welcome'></a> <a class='archive-days' data-day='Welcome' id='_Welcome'>Welcome</a></div></ul>").appendTo($('#' +split[1]+split[2]+split[3]).parent().parent().parent())
+
+//add welcome to datelist Array
+$("<p>Welcome</p>").appendTo($('#dom-target'))
+
 
 //Changes TITLE
 $(document).ready(function() {
@@ -248,9 +238,11 @@ $(document).ready(function(){
     $("."+this.id+"-monthList").mouseleave(function(){
   //  $(".timeline").mouseleave(function(){
 
-
+  //loop through all dates
      for(i=0;i<=dateListFull.length;i++){
+       //loop through all objects to find which one has selected class
        var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+       //if does not have selected class slide
        if(!($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
          $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
          //console.log("slideup mouseout: "+ $('#'+this.id+"-monthList").text());
@@ -288,77 +280,65 @@ function Reload(){
       var ajaxurl = $('#dom-target').data('url');
       var last_Date = $('#dom-target').children().last();
       var dateArray = last_Date.text();
-      var split = dateArray.split(/[ ,]+/);
+      if(dateArray="Welcome"){//send seperate ajax if going to Welcome
+        $.ajax({
+
+          url : ajaxurl,
+          type: 'post',
+          data :{
+
+          action: 'japi_welcome'
+          },
+          error:function(response){
+            console.log(response);
+            console.log("FAILURE");
+          },
+          success:function(response){
+            $('.Post-container').empty();
+            console.log("success");
+            $('.Post-container').hide().prepend(response).fadeIn('slow');
+
+          }
+
+        });
+
+        $('.selected_date').empty();
+        $('.selected_date').append( dateArray);
+
+        $('#Welcome').removeClass("day_box");
+        $('#Welcome').addClass("selected_box");
+        $('#_Welcome').addClass("selected_text");
+
+        var dateListFull = $('#dom-target').children();
+
+        for(i=0;i<=dateListFull.length;i++){
+          var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
 
 
-    //  console.log("last_Date Text: " +dateArray);
+          if($('#' +other_split[1]+other_split[2]+other_split[3]).hasClass("selected_box")) {
 
-      var y = split[3];
-      var m = split[1];
-      var d = split[2];
+            $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+            //      console.log("this is the parent Onload");
+          }
+          else {
+            $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+          }
+          if($('#Welcome').hasClass("selected_box")){
 
-  //    console.log("year: "+y);
-  //    console.log("month: "+m);
-  //    console.log("day: " +d);
+            $('#Welcome').parent().parent().parent().slideDown("slow");
+          }
+          //slide up if Welcome does not have class
+          else{
+            $('#Welcome').slideUp("slow");
 
+          }
 
-      $('.selected_date').empty();
-      $('.selected_date').append(dateArray);
-
-
-
-
-      $('#' +split[1]+split[2]+split[3]).removeClass("day_box");
-      $('#' +split[1]+split[2]+split[3]).addClass("selected_box");
-      $('#_' +split[1]+split[2]+split[3]).addClass("selected_text");
-
-
-
-  //    console.log("DATE: "+dateArray.trim());
-  var dateListFull = $('#dom-target').children();
-
-  for(i=0;i<=dateListFull.length;i++){
-    var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
-
-
-    if($('#' +other_split[1]+other_split[2]+other_split[3]).hasClass("selected_box")){
-
-      $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
-      //      console.log("this is the parent Onload");
-    }
-    else {
-      $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
-    }
-
-  }
-  function convertMonthNameToNumber(monthName) {
-      var myDate = new Date(monthName + " 1, 2000");
-      var monthDigit = myDate.getMonth();
-      return isNaN(monthDigit) ? 0 : (monthDigit + 1);
-  }
-  var m_number = convertMonthNameToNumber(m);
-      $.ajax({
-
-        url : ajaxurl,
-        type: 'post',
-        data :{
-          "digwp_y": y,
-          "digwp_m" : m_number,
-          "digwp_d" : d,
-        action: 'japi_load_more'
-        },
-        error:function(response){
-          console.log(response);
-          console.log("FAILURE");
-        },
-        success:function(response){
-          $('.Post-container').empty();
-          console.log("success");
-          $('.Post-container').hide().prepend(response).fadeIn('slow');
 
         }
 
-      });
+
+      }
+
   }
 $(document).ready(Reload());
 
@@ -369,6 +349,8 @@ $(document).ready(Reload());
   /*--------------------------------------*/
   /*--------------------------------------*/
   /*--------------------------------------*/
+
+
 //when click on next day arrow
 $(document).on('click','.next', function(){
   //because on load, you can not go to a previous post as it loads the latest post, the previous button has class noclick, this will remove class noclick
@@ -411,6 +393,81 @@ $(document).on('click','.next', function(){
     //  console.log("Next Object Text:"+Next_object_text);
       var ajaxurl = $('#dom-target').data('url');
       var dateArray = Next_object_text;
+      if(dateArray==("Welcome")){//send seperate ajax if clicking on Welcome
+
+        console.log("WELCOME CLICK");
+
+        var dateListFull = $('#dom-target').children();
+            for(i=0;i<=dateListFull.length;i++){
+
+              var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+
+
+              if(dateListFull.eq(i).text()==(' '+dateArray)){
+                $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("day_box");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_box");
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_text");
+              }
+              else{
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_text");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
+                //          console.log("removeClass:"+dateListFull.eq(i).text());
+              }
+            }
+
+        $.ajax({
+
+          url : ajaxurl,
+          type: 'post',
+          data :{
+
+          action: 'japi_welcome'
+          },
+          error:function(response){
+            console.log(response);
+            console.log("FAILURE");
+          },
+          success:function(response){
+            $('.Post-container').empty();
+            console.log("success");
+            $('.Post-container').hide().prepend(response).fadeIn('slow');
+
+          }
+
+        });
+
+        $('.selected_date').empty();
+        $('.selected_date').append( dateArray);
+
+        $('#Welcome').removeClass("day_box");
+        $('#Welcome').addClass("selected_box");
+        $('#_Welcome').addClass("selected_text");
+
+        var dateListFull = $('#dom-target').children();
+        for(i=0;i<=dateListFull.length;i++){
+          var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+          if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+
+               $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+               //         console.log("this is the parent previous");
+
+               //           console.log("children"+($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().text()));
+
+          }
+          else{
+            $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+          }
+        }
+
+
+
+
+      }
+      else{//If not welcome page clicked
+        $('#_Welcome').removeClass("selected_text");
+        $('#Welcome').removeClass("selected_box");
+        $('#Welcome').addClass("day_box");
       var split = dateArray.split(/[ ,]+/);
   //    console.log("DATE: "+dateArray);
 
@@ -492,6 +549,7 @@ $(document).on('click','.next', function(){
         $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
       }
     }
+  }
 
 });
 
@@ -506,6 +564,9 @@ $(document).on('click','.previous', function(){
 
   $('.next').removeClass('noclick');
   $('.next').addClass('Onclick');
+  $('#_Welcome').removeClass("selected_text");
+  $('#Welcome').removeClass("selected_box");
+  $('#Welcome').addClass("day_box");
 
   //  console.log("previous");
 
@@ -549,6 +610,7 @@ $(document).on('click','.previous', function(){
       //that is used to maintain the parent class object, if we use $(this) in a child class it will use the child classes object
       var ajaxurl = $('#dom-target').data('url');
       var dateArray = Previous_object_text;
+
       var split = dateArray.split(/[ ,]+/);
   //    console.log("DATE: "+dateArray);
 
@@ -636,7 +698,8 @@ $(document).on('click','.previous', function(){
          }
          */
 
-      }
+
+    }
 });
 
   /*--------------------------------------*/
@@ -655,6 +718,111 @@ $(document).on('click','.archive-days', function(){
       //that is used to maintain the parent class object, if we use $(this) in a child class it will use the child classes object
       var ajaxurl = $('#dom-target').data('url');
       var dateArray = $(this).data('day');
+
+      console.log("DATEARRAY CLICK"+dateArray);
+
+      if(dateArray==("Welcome")){//send seperate ajax if clicking on Welcome
+
+        console.log("WELCOME CLICK");
+
+        var dateListFull = $('#dom-target').children();
+            for(i=0;i<=dateListFull.length;i++){
+
+              var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+
+
+              if(dateListFull.eq(i).text()==(' '+dateArray)){
+                $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("day_box");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_box");
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).addClass("selected_text");
+              }
+              else{
+                $('#_' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_text");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).removeClass("selected_box");
+                $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
+                //          console.log("removeClass:"+dateListFull.eq(i).text());
+              }
+            }
+            var First = $("#dom-target").children().first();
+            var inner = First.text();
+          //  console.log("First Object:"+inner);
+            if((' '+dateArray)===inner){
+              $('.previous').removeClass('Onclick');
+              $('.previous').addClass('noclick');
+
+              $('.next').removeClass('noclick');
+              $('.next').addClass('Onclick');
+
+              console.log("CANT GO ANY FARTHER Back");
+            }
+            var Last = $("#dom-target").children().last();
+            var inner = Last.text();
+          //  console.log("Last Object:"+inner);
+            if((' '+dateArray)===inner){
+              $('.next').removeClass('Onclick');
+              $('.next').addClass('noclick');
+
+              $('.previous').removeClass('noclick');
+              $('.previous').addClass('Onclick');
+
+              console.log("CANT GO ANY FARTHER");
+            }
+
+        $.ajax({
+
+          url : ajaxurl,
+          type: 'post',
+          data :{
+
+          action: 'japi_welcome'
+          },
+          error:function(response){
+            console.log(response);
+            console.log("FAILURE");
+          },
+          success:function(response){
+            $('.Post-container').empty();
+            console.log("success");
+            $('.Post-container').hide().prepend(response).fadeIn('slow');
+
+          }
+
+        });
+
+        $('.selected_date').empty();
+        $('.selected_date').append( dateArray);
+
+        $('#Welcome').removeClass("day_box");
+        $('#Welcome').addClass("selected_box");
+        $('#_Welcome').addClass("selected_text");
+
+        var dateListFull = $('#dom-target').children();
+        for(i=0;i<=dateListFull.length;i++){
+          var other_split=dateListFull.eq(i).text().split(/[ ,]+/);
+          if(($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().hasClass("selected_box"))){
+
+               $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideDown("slow");
+               //         console.log("this is the parent previous");
+
+               //           console.log("children"+($('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().children().children().children().text()));
+
+          }
+          else{
+            $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
+          }
+        }
+
+
+
+
+      }
+      else{//If not welcome page clicked
+        $('#_Welcome').removeClass("selected_text");
+        $('#Welcome').removeClass("selected_box");
+        $('#Welcome').addClass("day_box");
+
+
+
       var split = dateArray.split(/[ ,]+/);
 
   //    console.log("DATE:"+dateArray);
@@ -687,6 +855,8 @@ $(document).on('click','.archive-days', function(){
               $('#' +other_split[1]+other_split[2]+other_split[3]).addClass("day_box");
               //          console.log("removeClass:"+dateListFull.eq(i).text());
             }
+            $('#_Welcome').removeClass("selected_text");
+            $('#Welcome').removeClass("selected_box");
           }
     //      console.log("Length of List of dates: "+ dateListFull.length);
     //  that.addclass(.japi_load_more)
@@ -763,6 +933,9 @@ $(document).on('click','.archive-days', function(){
           $('#' +other_split[1]+other_split[2]+other_split[3]).parent().parent().parent().slideUp("slow");
         }
       }
+    }
+
+
 
 
   });
@@ -782,9 +955,6 @@ $(document).on('click','#live_title', function(){
   $('#Live').show();
   $('.title_click').removeClass('title_click');
   $('#live_title').addClass('title_click');
-
-  //reloads content on live page from first post
-  Reload();
 
 
 });
@@ -823,7 +993,6 @@ $(document).on('click','#code_title', function(){
           console.log("FAILURE");
         },
         success:function(response){
-          $('.Post-container').empty();
           console.log("success");
           $('#Code').hide().prepend(response).fadeIn('slow');
 
@@ -871,7 +1040,6 @@ $(document).on('click','#film_title', function(){
       console.log("FAILURE");
     },
     success:function(response){
-      $('.Post-container').empty();
       console.log("success");
       $('#Film').hide().prepend(response).fadeIn('slow');
 

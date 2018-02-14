@@ -101,7 +101,7 @@ LOG
         -Need to start creating the "Works" page, this will include my portfolio
     ///////////////////////////////////////////////////////////
     Thursday, July 27, 2017
-   
+
          Completed:
               -Polished mouseover mouseleave events
               -fixed issues with date being in String type when AJAX required Integer type
@@ -109,8 +109,8 @@ LOG
          Next Steps:
              -Figure out alternative video hosting service
              -Make loading speeds more efficient
-             
-             
+
+
 
     ///////////////////////////////////////////////////////////
     Tuesday, Aug 1, 2017
@@ -124,3 +124,112 @@ LOG
 		-Make file size smaller, load speeds are poor
 		-Two Next Buttons Clashing
 
+
+    ///////////////////////////////////////////////////////////
+    Wednesday, February 14, 2018
+
+    -add home sibling to timeline and array
+    -fix disgusting timeline hover function
+    -when clicking button, code div should have space so logo japi doesn’t jump to top
+
+Idea for latest date
+
+// var today = new Date();
+// var monthNames = ["January", "February", "March", "April", "May", "June",
+//   "July", "August", "September", "October", "November", "December"
+// ];
+//
+// var dd = today.getDate();
+// var mm = today.getMonth()+1; //January is 0!
+//
+// var yyyy = today.getFullYear();
+// if(dd<10){
+//     dd='0'+dd;
+// }
+// if(mm<10){
+//     mm='0'+mm;
+// }
+// mm=monthNames[mm];
+// var today = dd+' '+mm+', '+yyyy;
+// console.log(today+"todays date styl")
+//
+//
+// dateListFull.append("<p> <a>"+today+"</a></p>")
+//
+// console.log(($('#dom-target').children().last()).text())
+
+
+  objective: add home landing page to timeline in LIVE tab
+    done: -ajax and titles
+    not done: -highlight welcome with clicked or scrolled to with arrows
+
+      -do this by adding class to the objects
+      -loops will run the same?
+      -what if clicked on different month "November" and you click on WELCOME
+            -it wont loop through Welcome to check if it has he class selected because it isnt a date in the date Array
+            -therefore will it be able to slide down?
+            - however it should Successfully add the selected class on click
+
+
+  Completed:
+    -using javascript, PHP, XML, JSON
+    -All major backend functionality working
+    -Successfully added welcome tab to timeline
+    -successfully implemented welcome with functions
+      -slide up, slide down, selected box, onload, onclick
+
+  Next Steps:
+    -Using CSS and HTML
+    -Add content to pages CODE and FILM and Welcome
+    -Fix logo allignment
+    -optimize for mobile
+    -compress images on Welcome page
+
+
+----------------------------
+add to CODE tab
+
+    <a name="Software"></a>
+
+
+    <section class="SoftwareProjectRow">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 text-center">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img id="Gimbal1" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Projects/Gimbal/Gimbal1.jpg" alt="logo"/>
+              </div>
+
+              <div class="item">
+                <img id="Gimbal2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Projects/Gimbal/Gimbal2.jpg" alt="logo"/>
+              </div>
+
+              <div class="item">
+                <video id="Gimbal3" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Projects/Gimbal/Gimbal3.mov" alt="logo"/>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/left.png"/>
+
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/right.png"/>
+
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
