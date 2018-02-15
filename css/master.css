@@ -101,6 +101,7 @@ body{
     margin-left: 34%;
 }
 
+
 .Intro{
   color:white;
 }
@@ -619,7 +620,7 @@ opacity: 0.5;
 
 
     #Home{
-      margin-bottom: 40px;
+      margin-top: 0px;
     }
 
     #Live{

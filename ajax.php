@@ -67,7 +67,8 @@ function japi_load_more(){
 
 function japi_welcome(){
   ?>
-  <section class="col-lg-12 col-sm-8 col-centered padding-bottom-md">
+
+  <section class="col-lg-12 col-sm-8 col-xs-6 col-sm-offset-2 col-centered padding-bottom-md">
     <div class="row">
       <div class="col-lg-4 col-sm-6 text-center">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -81,11 +82,11 @@ function japi_welcome(){
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img id="me1" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me1.jpg" alt="logo"/>
+              <img id="me1" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me1.png" alt="logo"/>
             </div>
 
             <div class="item">
-              <img id="me2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me2.png" alt="logo"/>
+              <img id="me2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me2.jpg" alt="logo"/>
             </div>
             <div class="item">
               <img id="me3" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me3.jpg" alt="logo"/>
@@ -94,7 +95,7 @@ function japi_welcome(){
               <img id="me4" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me4.jpg" alt="logo"/>
             </div>
             <div class="item">
-              <img id="me5" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me5.jpg" alt="logo"/>
+              <img id="me5" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me5.JPG" alt="logo"/>
             </div>
             <div class="item">
               <img id="me8" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me8.jpg" alt="logo"/>
@@ -117,24 +118,27 @@ function japi_welcome(){
 
   </section>
 
-  <p class="Intro">
+  <div class="row">
+    <p class="Intro col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-0">
 
-     Hey! Thank you for supporting me on this journey. Seeing visitors drives me to keep creating.
+       Hey! Thank you for supporting me on this journey. Seeing visitors drives me to keep creating.
 
-     Combining art and science is what inspires me.
+       Combining art and science is what inspires me.
 
-     Forgive me as the site does not work on Mobile.
-     Soon I will have the FILM and CODE tabs Completed.
+       Forgive me as the site does not work on Mobile.
+       Soon I will have the FILM and CODE tabs Completed.
 
-            >Last update as of Wednesday, February 14, 2018.
+              >Last update as of Wednesday, February 14, 2018.
 
-  </p>
-  <p class="Intro2">
-       If you are looking to see my projects please head over to https://github.com/JapinderSandhu.
+    </p>
+    <p class="Intro2 col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-0">
+         If you are looking to see my projects please head over to https://github.com/JapinderSandhu.
 
-       If you would like to see the code for this site and or want my resume please email me at salutations@japi.ca.
+         If you would like to see the code for this site and or want my resume please email me at salutations@japi.ca.
 
-     </p>
+       </p>
+  </div>
+
 
   <?php
   wp_reset_postdata();

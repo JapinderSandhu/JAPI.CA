@@ -92,7 +92,7 @@ Template Name: Front Page
         </div>
       </div><!-- @end #Live -->
 
-      <div id="Code">
+      <div id="Code" class="col-centered container-fluid">
 
 
       </div>

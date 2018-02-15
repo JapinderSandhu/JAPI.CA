@@ -132,7 +132,7 @@ $(document).ready(function(){
   if (window.matchMedia("(min-width: 769px) and (max-width: 1440px)").matches) {
 
     var scrollTop = (window.innerWidth-1440)/4.2 + 1060;
-    var marginHome = (window.innerWidth-1440)/5.22 + 179;
+    var marginHome = (window.innerWidth-1440)/5.22 + 70;
     var positionY =  -window.innerWidth+1440 + (-721);
     var marginBottom = (-window.innerWidth+1440)/2.2954 + window.innerHeight-834  + 225;
 
