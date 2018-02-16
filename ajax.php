@@ -67,59 +67,61 @@ function japi_load_more(){
 
 function japi_welcome(){
   ?>
+  <div class="row">
+    <section class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-6 col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 padding-bottom-lg">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 text-center">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-  <section class="col-lg-12 col-sm-8 col-xs-6 col-sm-offset-2 col-centered padding-bottom-md">
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 text-center">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img id="me1" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me1.png" alt="logo"/>
+              </div>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img id="me1" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me1.png" alt="logo"/>
+              <div class="item">
+                <img id="me2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me2.jpg" alt="logo"/>
+              </div>
+              <div class="item">
+                <img id="me3" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me3.jpg" alt="logo"/>
+              </div>
+              <div class="item">
+                <img id="me4" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me4.jpg" alt="logo"/>
+              </div>
+              <div class="item">
+                <img id="me5" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me5.JPG" alt="logo"/>
+              </div>
+              <div class="item">
+                <img id="me8" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me8.jpg" alt="logo"/>
+              </div>
             </div>
 
-            <div class="item">
-              <img id="me2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me2.jpg" alt="logo"/>
-            </div>
-            <div class="item">
-              <img id="me3" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me3.jpg" alt="logo"/>
-            </div>
-            <div class="item">
-              <img id="me4" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me4.jpg" alt="logo"/>
-            </div>
-            <div class="item">
-              <img id="me5" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me5.JPG" alt="logo"/>
-            </div>
-            <div class="item">
-              <img id="me8" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/1920x1080/Welcome/me8.jpg" alt="logo"/>
-            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/left.png"/>
+
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/right.png"/>
+
+            </a>
           </div>
 
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/left.png"/>
-
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <img class="left-control" src="<?php bloginfo('stylesheet_directory'); ?>/assets/media/live/right.png"/>
-
-          </a>
         </div>
-
       </div>
-    </div>
 
-  </section>
+    </section>
+  </div>
+
 
   <div class="row">
-    <p class="Intro col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-0">
+    <p class="Intro col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
 
        Hey! Thank you for supporting me on this journey. Seeing visitors drives me to keep creating.
 
@@ -131,7 +133,10 @@ function japi_welcome(){
               >Last update as of Wednesday, February 14, 2018.
 
     </p>
-    <p class="Intro2 col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-0">
+
+  </div>
+  <div class="row">
+    <p class="Intro2 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
          If you are looking to see my projects please head over to https://github.com/JapinderSandhu.
 
          If you would like to see the code for this site and or want my resume please email me at salutations@japi.ca.
